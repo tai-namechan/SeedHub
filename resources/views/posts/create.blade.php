@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +24,7 @@
             </div>
             <div>
                 <label>詳細情報</label>
-                <textarea placeholder="詳細情報を入力してください" name="detail">
-                </textarea>
+                <textarea placeholder="詳細情報を入力してください" name="detail"></textarea>
             </div>
             <div>
                 <label>URL</label>

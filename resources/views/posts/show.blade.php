@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
                   <p>開催URl：
                     <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
                   </p>
-                  
+
                   <p>時間帯：{{ $post->timezone_id }}</p>
                   <a onclick="history.back()" class="btn btn-primary">
                     戻る
@@ -36,7 +36,7 @@
                 <input type="hidden" name="post_id" value="">
                 <div class="form-group">
                     <label>コメント</label>
-                    <textarea class="form-control" 
+                    <textarea class="form-control"
                     placeholder="内容" rows="5" name="body"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">コメントする</button>
