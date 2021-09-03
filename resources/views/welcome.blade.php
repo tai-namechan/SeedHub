@@ -89,6 +89,7 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+                    <a href="{{ route('posts.create') }}">もくもく新規作成</a>
                 </div>
             @endif
 
