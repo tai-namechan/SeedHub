@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 // ModelのことAppの中にあるPostもモデルを使う
 use App\Meeting;
 use Auth;
-use App\Meeting;
 
 class PostController extends Controller
 {
@@ -81,7 +80,7 @@ class PostController extends Controller
         $meeting_info->timezone_id = 1;
 
         $meeting_info->save();
-        
+
         // リダイレクト処理
         return redirect('/');
     }
