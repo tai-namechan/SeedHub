@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // ModelのことAppの中にあるPostもモデルを使う
 use App\Meeting;
 use Auth;
+use App\Meeting;
 
 class PostController extends Controller
 {
@@ -15,7 +16,13 @@ class PostController extends Controller
         // ログインしていないユーザーは登録ページに飛ぶ
         if( Auth::id() == null){
         return redirect('/register');
-    }
+        }
+
+
+        $meetings = Meeting::all();
+        // dd($meetings);
+        return view('posts.index', ['meetings'=>$meetings]);
+
         // if( Auth::id() == null){
         //     return redirect('/home');
         // }
@@ -30,7 +37,7 @@ class PostController extends Controller
 
         // ログインしたuserの投稿のみを表示する
         // チーム開発ならマイページで使う
-        
+
         // Authログインしたuserユーザーが持っているposts投稿一覧
         // $posts = Auth::user()->posts;
 
@@ -45,7 +52,7 @@ class PostController extends Controller
         // $posts = Post::paginate(10);
         // 最新順に並び替える
         // $posts = Post::latest()->get();
-        
+
         // デバックdd($posts); Laravelのvar_dump
 
         // postsフォルダの中のindexというviewファイルにviewpostsとしてデータを渡す

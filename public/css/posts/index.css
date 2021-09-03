@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*  header */
+/* app内で統一した方が良い？ */
+header {
+  width: 100vw;
+  height: 20vh;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+/* main */
+main {
+  background-color: #f2f2f3;
+  height: 80vh;
+}
+
+.container {
+  background-color: white;
+  margin: 0 auto;
+  width: 70vw;
+  height: 80vh;
+}
+
+.meetings {
+  width: 100%;
+}
+
+.meeting {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.left {
+  width: 40%;
+  height: 100%;
+}
+
+.left p {
+  text-align: center;
+}
+
+.right {
+  width: 60%;
+  height: 100%;
+}
+
+.right h3 {
+  text-align: center;
+}
+
+.meeting_name {
+  text-decoration: none;
+  color: black;
+}
+.meeting_name:hover {
+  border-bottom: 1px solid black;
+}
