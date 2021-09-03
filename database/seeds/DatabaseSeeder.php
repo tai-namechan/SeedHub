@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         // $this->call(CategorySeeder::class);
+
+        $this->call(CategoryTableSeeder::class);
+        $this->call(TimezoneTableSeeder::class);
+
     }
 }

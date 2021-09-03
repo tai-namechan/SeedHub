@@ -94,4 +94,30 @@ class PostController extends Controller
         // $post = Where::等
         return view('posts.show', ['post' => $post]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $login_user_id = Auth::id();
+        // dd($login_user_id);
+
+        $meeting_info = new Meeting;
+        $meeting_info->name = $request->meeting;
+        $meeting_info->start_time = $request->starttime;
+        $meeting_info->end_time = $request->endtime;
+        $meeting_info->detail = $request->detail;
+        $meeting_info->url = $request->url;
+        $meeting_info->category_id = $request->category;
+        $meeting_info->user_id = $login_user_id;
+        $meeting_info->timezone_id = 1;
+
+        $meeting_info->save();
+
+        // リダイレクト処理
+        return redirect('/');
+    }
 }
