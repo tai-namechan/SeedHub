@@ -45,8 +45,7 @@ class PostController extends Controller
         // dd($posts);
         // エロクエント
         // ＄〇〇 = Postテーブルから::all(全部)
-        // $posts = Post::all();
-
+        
         // 表示件数を制限する
         // $posts = Post::paginate(10);
         // 最新順に並び替える
@@ -83,5 +82,16 @@ class PostController extends Controller
         
         // リダイレクト処理
         return redirect('/');
+    }
+
+    // 渡ってきたidが引数に入る
+    function show($id)
+    {
+        // idで一件だけ取得するときfindでとる
+        $post = Meeting::find($id);
+    
+        // 他のカラムでデータを取るとき
+        // $post = Where::等
+        return view('posts.show', ['post' => $post]);
     }
 }

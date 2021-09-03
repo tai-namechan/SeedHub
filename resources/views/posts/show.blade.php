@@ -18,9 +18,14 @@
                   <div class="card-body">
                   <p class="card-text">詳細：{{ $post->detail }}</p>
                   <p>投稿日時：{{ $post->created_at }}</p>
-                  <p>開催URl：{{ $post->url }}</p>
-                  {{-- <p>時間帯：{{ $post->timezone_id }}</p> --}}
+                  <p>開催URl：
+                    <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
+                  </p>
                   
+                  <p>時間帯：{{ $post->timezone_id }}</p>
+                  <a onclick="history.back()" class="btn btn-primary">
+                    戻る
+                  </a>
                   </div>
               </div>
           </div>
