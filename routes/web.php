@@ -27,3 +27,8 @@ Route::get('/posts/index', 'PostController@index')->name('posts.index');
 Route::get('/sample', function () {
     return view('sample');
 });
+
+// 新規登録ページ
+Route::get('/create', 'PostController@create')->name('posts.create');
+
+Route::post('/store', 'PostController@store')->name('posts.store');
