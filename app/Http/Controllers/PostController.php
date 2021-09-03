@@ -45,8 +45,7 @@ class PostController extends Controller
         // dd($posts);
         // エロクエント
         // ＄〇〇 = Postテーブルから::all(全部)
-        // $posts = Post::all();
-
+        
         // 表示件数を制限する
         // $posts = Post::paginate(10);
         // 最新順に並び替える
@@ -56,7 +55,44 @@ class PostController extends Controller
 
         // postsフォルダの中のindexというviewファイルにviewpostsとしてデータを渡す
         // return view('posts.index', ['viewpost' =>$posts]);
-        return view('posts.index');
+        
+    }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $login_user_id = Auth::id();
+        // dd($login_user_id);
+
+        $meeting_info = new Meeting;
+        $meeting_info->name = $request->meeting;
+        $meeting_info->start_time = $request->starttime;
+        $meeting_info->end_time = $request->endtime;
+        $meeting_info->detail = $request->detail;
+        $meeting_info->url = $request->url;
+        $meeting_info->category_id = $request->category;
+        $meeting_info->user_id = $login_user_id;
+        $meeting_info->timezone_id = 1;
+
+        $meeting_info->save();
+        
+        // リダイレクト処理
+        return redirect('/');
+    }
+
+    // 渡ってきたidが引数に入る
+    function show($id)
+    {
+        // idで一件だけ取得するときfindでとる
+        $post = Meeting::find($id);
+    
+        // 他のカラムでデータを取るとき
+        // $post = Where::等
+        return view('posts.show', ['post' => $post]);
     }
 
     public function create()

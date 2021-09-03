@@ -32,3 +32,8 @@ Route::get('/sample', function () {
 Route::get('/create', 'PostController@create')->name('posts.create');
 
 Route::post('/store', 'PostController@store')->name('posts.store');
+
+
+Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
+
+

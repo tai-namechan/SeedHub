@@ -28,7 +28,7 @@
           </div>
           <div class="right">
             <h3>
-              <a href="" class="meeting_name">
+              <a href="{{ route('posts.show', $meeting->id) }}" class="meeting_name">
               {{ $meeting->name }}
               </a>
             </h3>
@@ -36,6 +36,25 @@
         </div>
         @endforeach
       </div>
+      @foreach ($meetings as $post) 
+            <div class="card-body">
+              {{-- aタグでリンクにする --}}
+              <a href="{{ route('posts.show', $post->id) }}">
+                <h5 class="card-title">タイトル : {{  $post->name }}</h5>
+              </a>
+              {{-- <h5 class="card-title">タイトル : {{  $post->title }}</h5> --}}
+              <p class="card-text">
+                内容 : {{ $post->detail }}
+            </p>
+              <p class="card-text">投稿者：{{ $post->user_id }}</p>
+              {{-- <a href="{{ route('posts.show', ['id' => $post->id]) }}" class="btn btn-primary">詳細へ</a> --}}
+              {{-- foreachの中の$postの中のidを送る --}}
+              <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a>
+            </div>
+            <div class="card-footer text-muted">
+              投稿日時 : {{ $post->created_at }}
+            </div>
+           @endforeach 
     </div>
   </main>
 
