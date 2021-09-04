@@ -86,9 +86,13 @@
                         <a href="{{ route('posts.create') }}">もくもく新規作成</a>
                         <a href="{{ route('posts.index') }}">一覧画面</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <div class="btn-border-gradient-wrap">
+                            <a href="{{ route('login') }}" class="btn btn-border-gradient">Login</a>
+                        </div>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <div class="btn-border-gradient-wrap">
+                                <a href="{{ route('register') }}" class="btn btn-border-gradient">Register</a>
+                            </div>
                         @endif
                     @endauth
 
@@ -108,6 +112,6 @@
             </div>
             <canvas id="waveCanvas"></canvas>
         </div>
-        <script src="{{ asset('js/animetion.js') }}" defer></script>
+        <script src="{{ asset('js/wave.js') }}" defer></script>
     </body>
 </html>
