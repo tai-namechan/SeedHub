@@ -47,16 +47,18 @@
         &__title {
             margin: 0.3rem 0 0 0;
             h1 {
-                font-family: cursive;
-                font-size: 1.3rem;
-                margin: 0 0.8rem;
+                font-family: 'Caveat', cursive;
+                font-size: 1.8rem;
+                margin: 0 1.3rem;
+                color: #212529;
             }
         }
         &__catch-copy {
             p {
-                font-family: cursive;
+                font-family: 'Montserrat Subrayada', sans-serif;
                 font-size: 0.25rem;
                 margin: 0 1.4rem;
+                color: #212529;
             }
         }
     }

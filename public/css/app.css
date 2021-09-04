@@ -44,7 +44,7 @@
   box-sizing: border-box;
 }
 
-/* html {
+html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -10940,7 +10940,7 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-} */
+}
 
 html {
   font-size: calc(100vw / 14.4);
@@ -10949,7 +10949,7 @@ html {
 
 body {
   font-size: 0.16rem;
-  background-color: #495058;
+  background-color: #4b5849;
 }
 
 html,
@@ -11174,14 +11174,16 @@ body canvas {
 }
 
 .welcome-content__title h1 {
-  font-family: "Montserrat Subrayada";
-  font-size: 1.3rem;
-  margin: 0 0.8rem;
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  margin: 0 1.3rem;
+  color: #212529;
 }
 
 .welcome-content__catch-copy p {
-  font-family: "Montserrat Subrayada";
+  font-family: "Montserrat Subrayada", sans-serif;
   font-size: 0.25rem;
   margin: 0 1.4rem;
+  color: #212529;
 }
 
