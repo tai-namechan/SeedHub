@@ -110,7 +110,12 @@ class CalendarView {
 		$html[] = $day->render();
         
         foreach ($meetings as $meeting) {
-            $html[] = $meeting->name;
+            // dd($meeting->id);
+            $html[] = "<a href='http://127.0.0.1:8000/posts/$meeting->id'>";
+            // dd($meeting->id);
+            // $html[] =  ")}}>";
+            $html[] = $meeting->name;
+            $html[] = "</a>";
             $html[] = "<br>";
         }
             

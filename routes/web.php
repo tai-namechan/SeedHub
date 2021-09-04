@@ -41,6 +41,3 @@ Route::post('/search', 'PostController@search')->name('posts.search');
 
 // 検索のリセット機能
 Route::get('/reset', 'PostController@reset')->name('posts.reset');
-
-// カレンダー
-Route::get('/calendar', 'CalendarController@show');
