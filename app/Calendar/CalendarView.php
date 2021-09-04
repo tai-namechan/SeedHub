@@ -10,7 +10,7 @@ class CalendarView {
 
 	function __construct($date){
 		$this->carbon = new Carbon($date);
-        
+        // dd($this->carbon);
 	}
 	/**
 	 * タイトル
@@ -41,12 +41,14 @@ class CalendarView {
         $html[] = '<tbody>';
 		
 		$weeks = $this->getWeeks();
+        // dd($weeks);
 		foreach($weeks as $week){
 			$html[] = '<tr class="'.$week->getClassName().'">';
 			$days = $week->getDays();
+            // dd($days);
 			foreach($days as $day){
+                // var_dump($day->date->format('d'));
                 $html[] = $this->renderDay($day);
-                // dd($day);
             }
 			$html[] = '</tr>';
 		}
@@ -96,31 +98,22 @@ class CalendarView {
         $month = $this->carbon->format('n');
         // dd($month);
 
+        $hoge=$day->render();
+        $hoge = preg_replace('/[^0-9]/', '', $hoge);
+
         // 当月に該当するデータを取得
-        // $meetings = Meeting::whereMonth('start_time', '=', date($month))->get();
-        // dd($meetings);
-        $meetings = Meeting::whereMonth('start_time', '=', date($month))->whereDay('start_time', '4')->get();
-        // dd($meetings[1]->name);
-        // for($i = 0; $i < 6; $i++) {
-        //     // foreach($meetings as $meeting) {
-        //         // for($i = 0; $i < 6; $i++) {
-        //             dd($meetings[0]->name);
-        //         // }
-        //     // }
-        // }
+        $meetings = Meeting::whereMonth('start_time', '=', date($month))->whereDay('start_time', $hoge)->get();
+        
 
 		$html = [];
 		$html[] = '<td class="'.$day->getClassName().'">';
 		$html[] = $day->render();
-        // dd($day->render());
-        // dd($meetings[0]->name);
-        // for ($i = 0; $i < 6; $i++) {
-            // if($day->render() == $meetings[0]->whereDay('start_time', '4')) {
-                $html[] = $meetings[0]->name;
-                dd($meetings[0]->name);
-            // }
-        // }
         
+        foreach ($meetings as $meeting) {
+            $html[] = $meeting->name;
+            $html[] = "<br>";
+        }
+            
 		$html[] = '</td>';
 		return implode("", $html);
 	}
