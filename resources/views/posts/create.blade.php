@@ -37,6 +37,14 @@
                     <option value="2">もくもく</option>
                 </select>
             </div>
+            <div>
+                <label>時間帯</label>
+                <select name="timezone">
+                    <option value="1">朝</option>
+                    <option value="2">昼</option>
+                    <option value="3">夜</option>
+                </select>
+            </div>
             <button type="submit">もくもく作成</button>
             </form>
         </div>

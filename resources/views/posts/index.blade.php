@@ -15,6 +15,26 @@
 
   <main>
     <div class="container">
+      <div class="">
+        <form class=""method="post" action="{{ route('posts.search') }}">
+            @csrf
+            <select class="" name="category" required>
+                <option value="0" hidden>カテゴリー</option>
+                <option value="1">もくもく</option>
+                <option value="2">ワイワイ</option>
+            </select>
+            <select class="" name="timezone" required>
+                <option value="0" hidden>時間帯</option>
+                <option value="1">朝</option>
+                <option value="2">昼</option>
+                <option value="3">夜</option>
+            </select>
+            <input class="search" type="submit" value="もくもく検索">
+        </form>
+        <form action="{{ route('posts.reset') }}" method="get">
+          <input class="reset" type="submit" value="リセット">
+        </form>
+      </div>
       <div class="meetings">
         @foreach ($meetings as $meeting)
         <div class="meeting">
