@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+    <title>草生やしたーい</title>
 </head>
 <body>
-    <h1>sample</h1>
-    {{-- {{$tweet['title']}} --}}
+    <div id="cal-heatmap"></div>
+<script type="text/javascript">
+    var cal = new CalHeatMap();
+
+    cal.init({
+        itemSelector: "#cal-heatmap",
+        domain: "day",
+        range: 12, data: "datas-years.json",
+        start: new Date(),
+    });
+</script>
 </body>
 </html>
