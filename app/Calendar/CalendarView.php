@@ -2,6 +2,7 @@
 namespace App\Calendar;
 
 use Carbon\Carbon;
+use App\Meeting;
 
 class CalendarView {
 
@@ -9,6 +10,7 @@ class CalendarView {
 
 	function __construct($date){
 		$this->carbon = new Carbon($date);
+        
 	}
 	/**
 	 * タイトル
@@ -44,6 +46,7 @@ class CalendarView {
 			$days = $week->getDays();
 			foreach($days as $day){
                 $html[] = $this->renderDay($day);
+                // dd($day);
             }
 			$html[] = '</tr>';
 		}
@@ -89,9 +92,35 @@ class CalendarView {
 	 * 日を描画する
 	 */
 	protected function renderDay(CalendarWeekDay $day){
+        // 当月の数字を取得
+        $month = $this->carbon->format('n');
+        // dd($month);
+
+        // 当月に該当するデータを取得
+        // $meetings = Meeting::whereMonth('start_time', '=', date($month))->get();
+        // dd($meetings);
+        $meetings = Meeting::whereMonth('start_time', '=', date($month))->whereDay('start_time', '4')->get();
+        // dd($meetings[1]->name);
+        // for($i = 0; $i < 6; $i++) {
+        //     // foreach($meetings as $meeting) {
+        //         // for($i = 0; $i < 6; $i++) {
+        //             dd($meetings[0]->name);
+        //         // }
+        //     // }
+        // }
+
 		$html = [];
 		$html[] = '<td class="'.$day->getClassName().'">';
 		$html[] = $day->render();
+        // dd($day->render());
+        // dd($meetings[0]->name);
+        // for ($i = 0; $i < 6; $i++) {
+            // if($day->render() == $meetings[0]->whereDay('start_time', '4')) {
+                $html[] = $meetings[0]->name;
+                dd($meetings[0]->name);
+            // }
+        // }
+        
 		$html[] = '</td>';
 		return implode("", $html);
 	}
