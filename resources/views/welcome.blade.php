@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
+        {{-- <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
@@ -74,7 +75,7 @@
             .catch-copy {
                 margin-bottom: 50px;
             }
-        </style>
+        </style> --}}
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -100,14 +101,6 @@
                 </div>
                 <div class="catch-copy">
                     エンジニアによるエンジニアのためのプラットホーム
-                </div>
-
-                <div class="link">
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="/sample">Sample</a>
-                    <a href="/posts">Posts</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
