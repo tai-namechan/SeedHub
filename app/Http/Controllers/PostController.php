@@ -39,8 +39,9 @@ class PostController extends Controller
         $meeting_info->detail = $request->detail;
         $meeting_info->url = $request->url;
         $meeting_info->category_id = $request->category;
+        $meeting_info->timezone_id = $request->timezone;
         $meeting_info->user_id = $login_user_id;
-        $meeting_info->timezone_id = 1;
+        // $meeting_info->timezone_id = 1;
 
         $meeting_info->save();
 
@@ -57,5 +58,36 @@ class PostController extends Controller
         // 他のカラムでデータを取るとき
         // $post = Where::等
         return view('posts.show', ['post' => $post]);
+    }
+
+    // 検索機能
+    public function search(Request $request)
+    {
+        $category_number = $request->category;
+        $timezone_number = $request->timezone;
+        // dd($request->timezone);
+
+        // if($category_number !== null) {
+        //     $meetings = Meeting::where('category_id', $category_number)->get();
+        // }
+        // else {
+        //     $meetings = Meeting::where('category_id', $category_number)->where('timezone_id', $request->timezone)->get();
+        // }
+        
+        // if($timezone_number !== null) {
+        //     $meetings = Meeting::where('timezone_id', $request->timezone)->get();
+        // } 
+        // else {
+            $meetings = Meeting::where('category_id', $category_number)->where('timezone_id', $timezone_number)->get();
+        // }
+        
+        return view('posts.index', ['meetings'=>$meetings]);
+    }
+
+    public function reset()
+    {
+        $meetings = Meeting::all();
+        // dd($meetings);
+        return view('posts.index', ['meetings'=>$meetings]);
     }
 }

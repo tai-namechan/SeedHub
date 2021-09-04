@@ -36,4 +36,8 @@ Route::post('/store', 'PostController@store')->name('posts.store');
 
 Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
+// 検索機能
+Route::post('/search', 'PostController@search')->name('posts.search');
 
+// 検索のリセット機能
+Route::get('/reset', 'PostController@reset')->name('posts.reset');
