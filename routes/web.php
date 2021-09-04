@@ -45,3 +45,11 @@ Route::post('/search', 'PostController@search')->name('posts.search');
 
 // 検索のリセット機能
 Route::get('/reset', 'PostController@reset')->name('posts.reset');
+
+// マイページのRoute
+Route::get('/mypages', 'ProfileController@index')->name('profiles.index');
+
+// ユーザーのプロフィール作成
+Route::get('/profiles/create', 'ProfileController@create')->name('profiles.create');
+
+Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store');

@@ -10,6 +10,7 @@
 <body>
   <header>
     <h1>♪ぴえん、ぴえん、ぴえん、ぴえん〜</h1>
+    <a href="{{ route('profiles.index') }}">My profile</a>
   </header>
 
 
