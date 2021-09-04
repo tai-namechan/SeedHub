@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Profile;
+use App\Participant;
 use Auth;
 
 class ProfileController extends Controller
@@ -16,15 +17,20 @@ class ProfileController extends Controller
         return redirect('/register');
         }
 
+        $login_user_id = Auth::id();
         $profiles = Profile::all();
-        
+        $profile = $profiles[0]->user_id;
+        // dd($profile);
+
         return view('users.mypage', ['profiles'=>$profiles]);
     }
+
 
     public function create()
     {
         return view('users.profile_create');
     }
+
 
     public function store(Request $request)
     {
@@ -37,7 +43,7 @@ class ProfileController extends Controller
         $profile_info->introduction = $request->introduction;
         // $profile_info->created_at = $request->created_at;
         $profile_info->user_id = $login_user_id;
-        
+
     //   dd($profile_info);
         // $image = $request->file('image');
         // // file()で受け取る
@@ -49,12 +55,12 @@ class ProfileController extends Controller
         $profile_info->save();
 
         // リダイレクト処理
-        return redirect('/');
+        return redirect('/mypages');
     }
 
     // 渡ってきたidが引数に入る
     function show($id)
     {
-     
+
     }
 }
