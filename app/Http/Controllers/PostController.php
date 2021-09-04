@@ -65,21 +65,13 @@ class PostController extends Controller
     {
         $category_number = $request->category;
         $timezone_number = $request->timezone;
-        // dd($request->timezone);
-
-        // if($category_number !== null) {
-        //     $meetings = Meeting::where('category_id', $category_number)->get();
-        // }
-        // else {
-        //     $meetings = Meeting::where('category_id', $category_number)->where('timezone_id', $request->timezone)->get();
-        // }
         
-        // if($timezone_number !== null) {
-        //     $meetings = Meeting::where('timezone_id', $request->timezone)->get();
-        // } 
-        // else {
+        if($category_number == "0" || $timezone_number == "0") {
+            $meetings = Meeting::where('timezone_id', $timezone_number)->orWhere('category_id', $category_number)->get();
+        }
+        else {
             $meetings = Meeting::where('category_id', $category_number)->where('timezone_id', $timezone_number)->get();
-        // }
+        }
         
         return view('posts.index', ['meetings'=>$meetings]);
     }
