@@ -82,9 +82,15 @@
             @if (Route::has('login'))
                 <div class="welcome-head">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ route('posts.create') }}">もくもく新規作成</a>
-                        <a href="{{ route('posts.index') }}">一覧画面</a>
+                        <div class="btn-border-gradient-wrap">
+                            <a href="{{ url('/home') }}" class="btn btn-border-gradient">Home</a>
+                        </div>
+                        <div class="btn-border-gradient-wrap">
+                            <a href="{{ route('posts.create') }}" class="btn btn-border-gradient">もくもく新規作成</a>
+                        </div>
+                        <div class="btn-border-gradient-wrap">
+                            <a href="{{ route('posts.index') }}" class="btn btn-border-gradient">一覧画面</a>
+                        </div>
                     @else
                         <div class="btn-border-gradient-wrap">
                             <a href="{{ route('login') }}" class="btn btn-border-gradient">Login</a>
