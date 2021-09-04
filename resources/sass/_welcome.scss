@@ -1,6 +1,19 @@
-.flex-center {
-    .content {
-        .title {
+html {
+    height: 100%;
+}
+.welcome {
+    &-content {
+        &__title {
+            h1 {
+                font-family: cursive;
+                font-size: 1.3rem;
+            }
+        }
+        &__catch-copy {
+            p {
+                font-family: cursive;
+                font-size: 0.25rem;            
+            }
         }
     }
 }

@@ -78,9 +78,9 @@
         </style> --}}
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="welcome wave">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="welcome-head">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('posts.create') }}">もくもく新規作成</a>
@@ -95,14 +95,19 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    SeedHub
+            <div class="welcome-content">
+                <div class="welcome-content__title">
+                    <h1>Seed Hub</h1>
                 </div>
-                <div class="catch-copy">
-                    エンジニアによるエンジニアのためのプラットホーム
+                <div class="welcome-content__catch-copy">
+                    <p>Platform for engineers by engineers</p>
+                </div>
+                <div class="link">
+                    <a href="/sample">Sample</a>
                 </div>
             </div>
+            <canvas id="waveCanvas"></canvas>
         </div>
+        <script src="{{ asset('js/animetion.js') }}" defer></script>
     </body>
 </html>
