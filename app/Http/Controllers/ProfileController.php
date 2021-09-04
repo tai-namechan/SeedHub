@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Profile;
 use App\Participant;
+use App\Calendar\CalendarView;
 use Auth;
 
 class ProfileController extends Controller
@@ -22,7 +23,9 @@ class ProfileController extends Controller
         $profile = $profiles[0]->user_id;
         // dd($profile);
 
-        return view('users.mypage', ['profiles'=>$profiles]);
+        $calendar = new CalendarView(time());
+
+        return view('users.mypage', ['profiles'=>$profiles, "calendar" => $calendar,]);
     }
 
 

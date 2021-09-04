@@ -46,6 +46,7 @@ Route::post('/search', 'PostController@search')->name('posts.search');
 // 検索のリセット機能
 Route::get('/reset', 'PostController@reset')->name('posts.reset');
 
+
 // 詳細画面で「参加する」を押した時の処理
 Route::post('/participant/store', 'ParticipantController@store')->name('participant.store');
 
@@ -56,4 +57,7 @@ Route::get('/mypages', 'ProfileController@index')->name('profiles.index');
 Route::get('/profiles/create', 'ProfileController@create')->name('profiles.create');
 
 Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store');
+
+// カレンダー
+Route::get('/calendar', 'CalendarController@show');
 

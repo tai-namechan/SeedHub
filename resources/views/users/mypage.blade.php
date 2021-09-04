@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+    {{-- <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" /> --}}
     <title>Profile</title>
 </head>
 <body>
 
-    {{-- <artIcle> --}}
-    <div id="cal-heatmap"></div>
 
-    <script type="text/javascript">
-        var cal = new CalHeatMap();
-        cal.init({
-            itemSelector: "#cal-heatmap",
-            domain: "day",
-            range: 12, data: "datas-years.json",
-            start: new Date(),
-    });
-    </script>
-    {{-- </artIcle> --}}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ $calendar->getTitle() }}</div>
+                    <div class="card-body">
+                            {!! $calendar->render() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <article class="userinformation">
