@@ -16,8 +16,10 @@
     cal.init({
         itemSelector: "#cal-heatmap",
         domain: "day",
-        range: 12, data: "datas-years.json",
+        range: 12,
+        data: "datas-years.json",
         start: new Date(),
+        legend: [1, 3, 5, 7, 10],
     });
 </script>
 </body>

@@ -16,16 +16,21 @@
                       <h5>ミーティング名：{{ $post->name }}</h5>
                   </div>
                   <div class="card-body">
-                  <p class="card-text">詳細：{{ $post->detail }}</p>
-                  <p>投稿日時：{{ $post->created_at }}</p>
-                  <p>開催URl：
-                    <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
-                  </p>
+                    <p class="card-text">詳細：{{ $post->detail }}</p>
+                    <p>投稿日時：{{ $post->created_at }}</p>
+                    <p>開催URl：
+                      <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
+                    </p>
 
-                  <p>時間帯：{{ $post->timezone_id }}</p>
-                  <a onclick="history.back()" class="btn btn-primary">
-                    戻る
-                  </a>
+                    <p>時間帯：{{ $post->timezone_id }}</p>
+                    <a onclick="history.back()" class="btn btn-primary">
+                      戻る
+                    </a>
+                    <form action="{{ route('participant.store') }}" method="POST">
+                      @csrf
+                      <input type="hidden" value="{{ $post->id }}" name="id">
+                      <input type="submit" value="参加する" name="participant">
+                    </form>
                   </div>
               </div>
           </div>

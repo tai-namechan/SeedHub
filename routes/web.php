@@ -53,3 +53,7 @@ Route::get('/mypages', 'ProfileController@index')->name('profiles.index');
 Route::get('/profiles/create', 'ProfileController@create')->name('profiles.create');
 
 Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store');
+
+// 詳細画面で「参加する」を押した時の処理
+Route::post('/participant/store', 'ParticipantController@store')->name('participant.store');
+
