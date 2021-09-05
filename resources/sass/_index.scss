@@ -1,0 +1,115 @@
+$primary: #839a80;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background-image: url(public/img/meeting.png);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// @keyframes spinner {
+//   0% { transform: rotateZ(0deg); }
+//   100% { transform: rotateZ(359deg); }
+// }
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: rgba(darken($primary,40%), 0.85);
+}
+.box10 {
+    height:2.5rem;
+    width: 7rem;
+    padding: 0.5em 10em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: #c6d6c4;/*背景色*/
+    border-top: solid 20px #374635;
+    // border-radius: 15px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    th {
+        font-size: 0.3rem;
+        margin: 0; 
+        padding: 0;
+    }
+    td {
+        font-size: 0.3rem;
+        margin: 0; 
+        padding: 0;
+    }
+}
+.box15 {
+    height:2.5rem;
+    width: 7rem;
+    padding: 0.5em 10em;
+    margin: 2em 0;
+    color: #565656;
+    background: #c6d6c4;/*背景色*/
+    box-shadow: 0px 0px 0px 10px #c6d6c4;
+    border: dashed 2px #839a80;
+    border-radius: 8px;
+    th {
+        font-size: 0.3rem;
+        margin: 0; 
+        padding: 0;
+    }
+    td {
+        font-size: 0.3rem;
+        margin: 0; 
+        padding: 0;
+    }
+}
+
+.container{
+     &-box{
+        .btn-border-gradient-wrap {
+            display: inline-block;
+            padding: 0.02rem;
+            border-radius: 0.05rem;
+            background: -webkit-gradient(linear, left top, right top, from(yellow), to(green));
+            background: -webkit-linear-gradient(left, yellow, green);
+            background: linear-gradient(to right, yellow, green);
+            margin: 0 0.1rem;
+            .btn-border-gradient {
+                color: #8fc31f;
+                background: #495058;
+            }
+            .btn {
+                font-size: 0.16rem;
+                font-weight: 700;
+                line-height: 1.5;
+                position: relative;
+                display: inline-block;
+                padding: 0.1rem 0.4rem;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+                letter-spacing: 0.1em;
+                border-radius: 0.05rem;
+            }
+            &:hover {
+                background: -webkit-gradient(linear, right top, left top, from(yellow), to(green));
+                background: -webkit-linear-gradient(right, yellow, green);
+                background: linear-gradient(to left, yellow, green);
+            }
+        }
+    }
+}
