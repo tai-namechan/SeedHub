@@ -29,10 +29,10 @@
                     <form action="{{ route('participant.store') }}" method="POST">
                       @csrf
                       <input type="hidden" value="{{ $post->id }}" name="id">
-                      <input type="submit" value="参加する" name="participant" onclick="modalOpen()">
-                      <button type="button" class="btn btn-primary" onclick="modalOpen()">
+                      <input type="submit" value="参加する" name="participant">
+                      {{-- <button type="button" class="btn btn-primary" onclick="modalOpen()">
                         Launch demo modal
-                      </button>
+                      </button> --}}
                       <!-- モーダルの設定 -->
                       <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
