@@ -10,6 +10,7 @@
 <body>
   <header>
     <h1>♪ぴえん、ぴえん、ぴえん、ぴえん〜</h1>
+    <a href="{{ route('profiles.index') }}">My profile</a>
   </header>
 
 
@@ -57,8 +58,18 @@
         @endforeach
       </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ $calendar->getTitle() }}</div>
+                <div class="card-body">
+                        {!! $calendar->render() !!}
+                </div>
+            </div>
+        </div>
+    </div>
   </main>
-
+  
 
   <footer></footer>
 </body>
