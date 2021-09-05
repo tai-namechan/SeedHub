@@ -1,8 +1,23 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import './layout';
+@import './reset';
+
+@import './wave';
+
+@import './welcome';
+
+@import './index';
+
+@import './create';
+
+@import './show';
