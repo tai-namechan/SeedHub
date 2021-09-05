@@ -1,0 +1,79 @@
+.welcome-body {
+    font-family: "Open Sans", sans-serif;
+    height: 100vh;
+    background-image: url(public/img/meeting.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    main {
+        $primary: #839a80;
+        background: rgba(darken($primary, 40%), 0.85);
+        height: 100%;
+        .welcome {
+            &-head {
+                padding: 0.2rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                .btn-border-gradient-wrap {
+                    display: inline-block;
+                    padding: 0.02rem;
+                    border-radius: 0.05rem;
+                    background: -webkit-gradient(linear, left top, right top, from(yellow), to(green));
+                    background: -webkit-linear-gradient(left, yellow, green);
+                    background: linear-gradient(to right, yellow, green);
+                    margin: 0 0.1rem;
+                    .btn-border-gradient {
+                        color: #8fc31f;
+                        background: #495058;
+                    }
+                    .btn {
+                        font-size: 0.16rem;
+                        font-weight: 700;
+                        line-height: 1.5;
+                        position: relative;
+                        display: inline-block;
+                        padding: 0.1rem 0.4rem;
+                        cursor: pointer;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        -webkit-transition: all 0.3s;
+                        transition: all 0.3s;
+                        text-align: center;
+                        vertical-align: middle;
+                        text-decoration: none;
+                        letter-spacing: 0.1em;
+                        border-radius: 0.05rem;
+                    }
+                    &:hover {
+                        background: -webkit-gradient(linear, right top, left top, from(yellow), to(green));
+                        background: -webkit-linear-gradient(right, yellow, green);
+                        background: linear-gradient(to left, yellow, green);
+                    }
+                }
+            }
+            &-content {
+                &__title {
+                    margin: 0.3rem 0 0 0;
+                    h1 {
+                        font-family: "Caveat", cursive;
+                        font-size: 1.8rem;
+                        margin: 0 1.3rem;
+                        color: #f8f9fa;
+                    }
+                }
+                &__catch-copy {
+                    p {
+                        font-family: "Montserrat Subrayada", sans-serif;
+                        font-size: 0.25rem;
+                        margin: 0 1.4rem;
+                        color: #f8f9fa;
+                    }
+                }
+            }
+        }
+    }
+}

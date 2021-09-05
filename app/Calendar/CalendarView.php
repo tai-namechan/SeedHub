@@ -26,15 +26,15 @@ class CalendarView {
 		$html = [];
 		$html[] = '<div class="calendar">';
 		$html[] = '<table class="table">';
-		$html[] = '<thead>';
-		$html[] = '<tr>';
-		$html[] = '<th>月</th>';
-		$html[] = '<th>火</th>';
-		$html[] = '<th>水</th>';
-		$html[] = '<th>木</th>';
-		$html[] = '<th>金</th>';
-		$html[] = '<th>土</th>';
-    $html[] = '<th>日</th>';
+		$html[] = '<thead class="a">';
+		$html[] = '<tr class="s">';
+		$html[] = '<th class="d">月</th>';
+		$html[] = '<th class="d">火</th>';
+		$html[] = '<th class="d">水</th>';
+		$html[] = '<th class="d">木</th>';
+		$html[] = '<th class="d">金</th>';
+		$html[] = '<th class="d">土</th>';
+    $html[] = '<th class="d">日</th>';
 		$html[] = '</tr>';
 		$html[] = '</thead>';
 
@@ -113,13 +113,14 @@ class CalendarView {
 
         foreach ($meetings as $meeting) {
 
-            $html[] = $meeting->name;
+            // $html[] = $meeting->name;
 
             // dd($meeting->id);
             $html[] = "<a href='http://127.0.0.1:8000/posts/$meeting->id'>";
             // dd($meeting->id);
             // $html[] =  ")}}>";
-            $html[] = $meeting->name;
+			// 後で戻す
+            // $html[] = $meeting->name;
             $html[] = "</a>";
 
             $html[] = "<br>";
