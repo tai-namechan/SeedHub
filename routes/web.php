@@ -47,6 +47,7 @@ Route::post('/search', 'PostController@search')->name('posts.search');
 Route::get('/reset', 'PostController@reset')->name('posts.reset');
 
 
+
 // 詳細画面で「参加する」を押した時の処理
 Route::post('/participant/store', 'ParticipantController@store')->name('participant.store');
 
@@ -60,4 +61,3 @@ Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store'
 
 // カレンダー
 Route::get('/calendar', 'CalendarController@show');
-

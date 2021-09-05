@@ -7,9 +7,18 @@ use Illuminate\Http\Request;
 // ModelのことAppの中にあるPostもモデルを使う
 use App\Meeting;
 use Auth;
+use App\Calendar\CalendarView;
 
 class PostController extends Controller
 {
+    function showCalender(){
+		$calendar = new CalendarView(time());
+
+		return view('posts.calendar', [
+			"calendar" => $calendar,
+		]);
+	}
+
     function index()
     {
         // ログインしていないユーザーは登録ページに飛ぶ
@@ -19,7 +28,8 @@ class PostController extends Controller
 
         $meetings = Meeting::all();
         // dd($meetings);
-        return view('posts.index', ['meetings'=>$meetings]);
+        $calendar = new CalendarView(time());
+        return view('posts.index', ['meetings'=>$meetings, "calendar" => $calendar,]);
     }
 
     public function create()
@@ -82,4 +92,6 @@ class PostController extends Controller
         // dd($meetings);
         return view('posts.index', ['meetings'=>$meetings]);
     }
+
+    
 }
