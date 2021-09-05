@@ -20,10 +20,12 @@ class ProfileController extends Controller
 
         $login_user_id = Auth::id();
         $profiles = Profile::all();
-        $profile = $profiles[0]->user_id;
+        // $profile = $profiles[0]->user_id;
         // dd($profile);
 
+        // 草生やすためのもの
         $calendar = new CalendarView(time());
+        // dd($calendar);
 
         return view('users.mypage', ['profiles'=>$profiles, "calendar" => $calendar,]);
     }

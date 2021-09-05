@@ -96,7 +96,7 @@ class CalendarView {
 	protected function renderDay(CalendarWeekDay $day){
         // 当月の数字を取得
         $month = $this->carbon->format('n');
-        dd($month);
+        // dd($month);
 
         $hoge=$day->render();
         $hoge = preg_replace('/[^0-9]/', '', $hoge);

@@ -18,7 +18,6 @@ class CalendarController extends Controller
 	public function contributios()
 	{
 		$calendar = new CalendarView(time());
-
 		return view('users.mypage', [
 			"calendar" => $calendar,
 		]);
