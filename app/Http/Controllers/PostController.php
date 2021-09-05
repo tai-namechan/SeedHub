@@ -7,9 +7,20 @@ use Illuminate\Http\Request;
 // ModelのことAppの中にあるPostもモデルを使う
 use App\Meeting;
 use Auth;
+use App\Calendar\CalendarView;
+
+use App\Kusa\KusaView;
 
 class PostController extends Controller
 {
+    function showCalender(){
+		$calendar = new CalendarView(time());
+
+		return view('posts.calendar', [
+			"calendar" => $calendar,
+		]);
+	}
+
     function index()
     {
         // ログインしていないユーザーは登録ページに飛ぶ
@@ -19,7 +30,8 @@ class PostController extends Controller
 
         $meetings = Meeting::all();
         // dd($meetings);
-        return view('posts.index', ['meetings'=>$meetings]);
+        $calendar = new CalendarView(time());
+        return view('posts.index', ['meetings'=>$meetings, "calendar" => $calendar,]);
     }
 
     public function create()
@@ -54,7 +66,7 @@ class PostController extends Controller
     {
         // idで一件だけ取得するときfindでとる
         $post = Meeting::find($id);
-
+        // dd($post);
         // 他のカラムでデータを取るとき
         // $post = Where::等
         return view('posts.show', ['post' => $post]);
@@ -65,14 +77,14 @@ class PostController extends Controller
     {
         $category_number = $request->category;
         $timezone_number = $request->timezone;
-        
+
         if($category_number == "0" || $timezone_number == "0") {
             $meetings = Meeting::where('timezone_id', $timezone_number)->orWhere('category_id', $category_number)->get();
         }
         else {
             $meetings = Meeting::where('category_id', $category_number)->where('timezone_id', $timezone_number)->get();
         }
-        
+
         return view('posts.index', ['meetings'=>$meetings]);
     }
 
@@ -82,4 +94,13 @@ class PostController extends Controller
         // dd($meetings);
         return view('posts.index', ['meetings'=>$meetings]);
     }
+
+    function showKusa(){
+		$calendar = new KusaView(time());
+
+		return view('sample', [
+			"calendar" => $calendar,
+		]);
+	}
+
 }
