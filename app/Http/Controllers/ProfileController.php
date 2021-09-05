@@ -8,6 +8,7 @@ use App\Profile;
 use App\Participant;
 use App\Calendar\CalendarView;
 use Auth;
+use App\Kusa\KusaView;
 
 class ProfileController extends Controller
 {
@@ -24,7 +25,7 @@ class ProfileController extends Controller
         // dd($profile);
 
         // 草生やすためのもの
-        $calendar = new CalendarView(time());
+        $calendar = new KusaView(time());
         // dd($calendar);
 
         return view('users.mypage', ['profiles'=>$profiles, "calendar" => $calendar,]);
@@ -68,4 +69,12 @@ class ProfileController extends Controller
     {
 
     }
+
+    function showKusa(){
+		$calendar = new KusaView(time());
+
+		return view('sample', [
+			"calendar" => $calendar,
+		]);
+	}
 }
