@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Meeting extends Model
 {
     //
-    public function Work_times()
+    public function meeting()
     {
-        return $this->hasMany('App\Meeting');
+        return $this->belongsTo('App\Participant');
     }
     protected $dates =
     [

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Meeting;
 use Auth;
 
+use App\Kusa\KusaView;
+
 class PostController extends Controller
 {
     function index()
@@ -82,4 +84,12 @@ class PostController extends Controller
         // dd($meetings);
         return view('posts.index', ['meetings'=>$meetings]);
     }
+
+    function showKusa(){
+		$calendar = new KusaView(time());
+
+		return view('sample', [
+			"calendar" => $calendar,
+		]);
+	}
 }

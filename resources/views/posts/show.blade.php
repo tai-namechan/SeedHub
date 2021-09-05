@@ -29,7 +29,7 @@
                     <form action="{{ route('participant.store') }}" method="POST">
                       @csrf
                       <input type="hidden" value="{{ $post->id }}" name="id">
-                      <input type="submit" value="参加する" name="participant">
+                      <input type="submit" value="参加する" name="participant" onclick="window.location.href='{{ $post->url }}'">
                     </form>
                   </div>
               </div>

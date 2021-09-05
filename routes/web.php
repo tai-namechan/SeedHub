@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sample', function () {
-    return view('sample');
-});
+// Route::get('/sample', function () {
+//     return view('sample');
+// });
 
 Auth::routes();
 
@@ -28,9 +28,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // 投稿一覧ページ
 Route::get('/posts/index', 'PostController@index')->name('posts.index');
 
-Route::get('/sample', function () {
-    return view('sample');
-});
+// Route::get('/sample', function () {
+//     return view('sample');
+// });
 
 // 新規登録ページ
 Route::get('/create', 'PostController@create')->name('posts.create');
@@ -48,3 +48,7 @@ Route::get('/reset', 'PostController@reset')->name('posts.reset');
 
 // 詳細画面で「参加する」を押した時の処理
 Route::post('/participant/store', 'ParticipantController@store')->name('participant.store');
+
+
+Route::get('/sample', 'PostController@showKusa')->name('posts.showKusa');
+

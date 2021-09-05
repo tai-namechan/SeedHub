@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="cal-heatmap"></div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var cal = new CalHeatMap();
 
     cal.init({
@@ -21,6 +21,16 @@
         start: new Date(),
         legend: [1, 3, 5, 7, 10],
     });
-</script>
+</script> -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ $calendar->getTitle() }}</div>
+                <div class="card-body">
+                        {!! $calendar->render() !!}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
