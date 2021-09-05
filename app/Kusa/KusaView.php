@@ -3,6 +3,7 @@ namespace App\Kusa;
 
 use Carbon\Carbon;
 use App\Participant;
+use App\Meeting;
 use Auth;
 
 class KusaView {
@@ -84,7 +85,7 @@ class KusaView {
 
 		return $weeks;
 	}
-       /**
+      /**
 	 * 日を描画する
 	 */
 	protected function renderDay(KusaWeekDay $day){
@@ -107,16 +108,42 @@ class KusaView {
         // }
         // $participantsDates = $participants->where();
         // $participants = Participant::where('meeting->id' == )->whereMonth('meeting->start_time', '=', date($month))->whereDay('meetings->start_time', $hoge)->get();
-        
 
+		$meeting_time = Meeting::all();
 		$html = [];
 		$html[] = '<td class="'.$day->getClassName().'">';
 		$html[] = $day->render();
+					$count = 0;
         foreach ($participants as $participant) {
-            $html[] = "🌱";
+					$meeting_id = $participant->meeting_id;
+					// ミーティング時間の取得
+					$date = $meeting_time[$meeting_id]->start_time;
+					$date = $date->format('Y/m/d');
+
+					// 参加回数によって表示される絵文字が変わる処理
+					if ($date === $date) {
+						$count += 1;
+						if ($count === 0) {
+							$html[] = "";
+						} elseif ($count === 1) {
+							$html[] = "🌱";
+						} elseif ($count === 2) {
+							array_pop($html);
+							$html[] = "☘️";
+						} else {
+							array_pop($html);
+							$html[] = "🌳";
+						}
+						// dd($count);
+					} else {
+						$count = 0;
+					}
+
+					// dd($date);
+            // $html[] = "🌱";
             // $html[] = "<br>";
         }
 		$html[] = '</td>';
 		return implode("", $html);
 	}
-} 
+}
