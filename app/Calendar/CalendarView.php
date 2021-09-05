@@ -1,16 +1,16 @@
 <?php
-namespace App\Kusa;
+namespace App\Calendar;
 
 use Carbon\Carbon;
-use App\Participant;
-use Auth;
+use App\Meeting;
 
-class KusaView {
+class CalendarView {
 
 	private $carbon;
 
 	function __construct($date){
 		$this->carbon = new Carbon($date);
+        // dd($this->carbon);
 	}
 	/**
 	 * タイトル
@@ -18,7 +18,8 @@ class KusaView {
 	public function getTitle(){
 		return $this->carbon->format('Y年n月');
 	}
-    /**
+
+	/**
 	 * カレンダーを出力する
 	 */
 	function render(){
@@ -33,17 +34,20 @@ class KusaView {
 		$html[] = '<th>木</th>';
 		$html[] = '<th>金</th>';
 		$html[] = '<th>土</th>';
-        $html[] = '<th>日</th>';
+    $html[] = '<th>日</th>';
 		$html[] = '</tr>';
 		$html[] = '</thead>';
 
-        $html[] = '<tbody>';
+    $html[] = '<tbody>';
 
 		$weeks = $this->getWeeks();
+        // dd($weeks);
 		foreach($weeks as $week){
 			$html[] = '<tr class="'.$week->getClassName().'">';
-            $days = $week->getDays();
+			$days = $week->getDays();
+            // dd($days);
 			foreach($days as $day){
+                // var_dump($day->date->format('d'));
                 $html[] = $this->renderDay($day);
             }
 			$html[] = '</tr>';
@@ -65,8 +69,9 @@ class KusaView {
 
 		//月末まで
 		$lastDay = $this->carbon->copy()->lastOfMonth();
-        //1週目
-		$week = new KusaWeek($firstDay->copy());
+
+		//1週目
+		$week = new CalendarWeek($firstDay->copy());
 		$weeks[] = $week;
 
 		//作業用の日
@@ -75,7 +80,7 @@ class KusaView {
 		//月末までループさせる
 		while($tmpDay->lte($lastDay)){
 			//週カレンダーViewを作成する
-			$week = new KusaWeek($tmpDay, count($weeks));
+			$week = new CalendarWeek($tmpDay, count($weeks));
 			$weeks[] = $week;
 
             //次の週=+7日する
@@ -84,39 +89,40 @@ class KusaView {
 
 		return $weeks;
 	}
-       /**
+
+    /**
 	 * 日を描画する
 	 */
-	protected function renderDay(KusaWeekDay $day){
+	protected function renderDay(CalendarWeekDay $day){
+        // 当月の数字を取得
         $month = $this->carbon->format('n');
+        // dd($month);
 
         $hoge=$day->render();
-        // var_dump($day->render());
         $hoge = preg_replace('/[^0-9]/', '', $hoge);
-        // var_dump($hoge);
 
-        $login_user_id = Auth::id();
-        // dd($login_user_id);
-        $participants = Participant::where('user_id', $login_user_id)->whereMonth('created_at', date($month))->whereDay('created_at', $hoge)->get();
-        // dd($participants);
-        // dd($participants[0]->meeting_id);
-        // foreach ($participants as $participant) {
-        //     // dd($participant->meeting_id);
-        //     $meeting_id = $participant->meeting_id;
-        //     // dd($meeting_id);
-        // }
-        // $participantsDates = $participants->where();
-        // $participants = Participant::where('meeting->id' == )->whereMonth('meeting->start_time', '=', date($month))->whereDay('meetings->start_time', $hoge)->get();
-        
+
+        // 当月に該当するデータを取得
+        $meetings = Meeting::whereMonth('start_time', '=', date($month))->whereDay('start_time', $hoge)->get();
+				// dd($meetings);
+
 
 		$html = [];
 		$html[] = '<td class="'.$day->getClassName().'">';
 		$html[] = $day->render();
-        foreach ($participants as $participant) {
-            $html[] = "🌱";
-            // $html[] = "<br>";
+
+        foreach ($meetings as $meeting) {
+
+            $html[] = "<a href='http://127.0.0.1:8000/posts/$meeting->id'>";
+            // dd($meeting->id);
+            // $html[] =  ")}}>";
+            $html[] = $meeting->name;
+            $html[] = "</a>";
+
+            $html[] = "<br>";
         }
+
 		$html[] = '</td>';
 		return implode("", $html);
 	}
-} 
+}

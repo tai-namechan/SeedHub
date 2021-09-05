@@ -10,6 +10,7 @@ use Auth;
 class ParticipantController extends Controller
 {
     //
+    // Participantsテーブルに、ミーティングの詳細で「参加する」が押されたもののuser_id, meeting_idを格納する
     public function store(Request $request)
     {
         $participant = new Participant;
