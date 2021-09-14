@@ -7,54 +7,56 @@
     {{-- <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script> --}}
     {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script> --}}
     {{-- <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" /> --}}
+    
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Profile</title>
 </head>
-<body>
+<body class="mypage-body">
 
+<section class="mypage-method">
+    <article class="user-body">
+        <div class="memox huifont">
+            
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ $calendar->getTitle() }}</div>
-                    <div class="card-body">
-                            {!! $calendar->render() !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <article class="userinformation">
-        <section class="userinformation-title">
-            <h2>My Profile </h2>
-        </section>
-
-
-        <section class="userinformation-content">
-            {{-- ユーザー名 --}}
-            <div class="username">
-                <h3>My Profile</h3>
+            <div class="userinformation-create">
                 <a href="{{ route('profiles.create') }}">プロフィール作成</a>
-                {{-- <h3>{{$senduserdata->name}}</h3> --}}
             </div>
 
-            <div class="cancel-the-membership">
-                <div class="cancel-title">
-                    <h4>ユーザー退会</h4>
+            <section class="userinformation-content">
+                {{-- ユーザー名 --}}
+
+                <div class="userimg">
+                    <img src="../img/meeting.png" alt="">
                 </div>
-                <p>
-                    ユーザー登録を退会します。<br>退会後、あなたが過去に投稿された口コミは<br>"退会ユーザー"の投稿として、残ることになります
-                </p>
-                {{-- <form action="{{route('deactive.form')}}" method="get">
-                    <input type="hidden" name="id" value="">
-                    <button type="submit" class="deletedata-button">退会ページ</button>
-                </form> --}}
+
+                <div class="username-title">ユーザー名</div>
+                <div class="username">
+                    {{-- <h3>{{$senduserdata->name}}</h3> --}}
+                    〇〇
+                </div>
+
+                <div class="myintroduce-title">紹介文</div>
+                <div class="myintroduce">ここに紹介文</div>
+
+                <div class="cancel-the-membership">
+                    <a href="">退会ページ</a>
+                    {{-- <form action="{{route('deactive.form')}}" method="get">
+                        <input type="hidden" name="id" value="">
+                        <button type="submit" class="deletedata-button">退会ページ</button>
+                    </form> --}}
+                </div>
+            </section>
+
+            <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ol>
             </div>
-        </section>
+
     </article>
+</section>
 
 </body>
 </html>

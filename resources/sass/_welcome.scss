@@ -1,14 +1,14 @@
 .welcome-body {
     font-family: "Open Sans", sans-serif;
     height: 100vh;
-    background-image: url(public/img/meeting.png);
+    background-image: url(public/img/meeting4.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     main {
         $primary: #839a80;
-        background: rgba(darken($primary, 40%), 0.85);
+        background: rgba(darken($primary, 20%), 0.85);
         height: 100%;
         .welcome {
             &-head {

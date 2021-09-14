@@ -11128,14 +11128,14 @@ body canvas {
 .welcome-body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
-  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
+  background-image: url(/images/meeting4.jpg?531954ec8dbbb3612b1e12ab4a682dd7);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .welcome-body main {
-  background: rgba(36, 43, 35, 0.85);
+  background: rgba(82, 100, 80, 0.85);
   height: 100%;
 }
 
@@ -11215,15 +11215,18 @@ body canvas {
   box-sizing: border-box;
 }
 
-.wrapper {
+.index-method {
+  background: rgba(82, 100, 80, 0.85);
+}
+
+.index-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 20px;
-  background: rgba(36, 43, 35, 0.85);
 }
 
 .box10 {
@@ -11254,12 +11257,14 @@ body canvas {
   width: 7rem;
   padding: 0.5em 10em;
   margin: 2em 0;
+  margin-bottom: 0.4rem;
   color: #565656;
   background: #c6d6c4;
   /*背景色*/
   box-shadow: 0px 0px 0px 10px #c6d6c4;
   border: dashed 2px #839a80;
   border-radius: 8px;
+  text-align: center;
 }
 
 .box15 th {
@@ -11274,8 +11279,25 @@ body canvas {
   padding: 0;
 }
 
+.box15 h3 {
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
 .meeting_name {
-  font-size: 0.3rem;
+  font-size: 0.28rem;
+}
+
+.index-box-content {
+  margin-top: 0.5rem;
+}
+
+.index-time {
+  margin-top: 0.5rem;
+}
+
+.container-box {
+  margin-top: 1rem;
 }
 
 .container-box .btn-border-gradient-wrap {
@@ -11315,7 +11337,7 @@ body canvas {
   background: linear-gradient(to left, yellow, green);
 }
 
-body {
+.create-body {
   font-size: 0.16rem;
   background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
   background-size: cover;
@@ -11324,48 +11346,23 @@ body {
   background-attachment: scroll;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  height: 100vh;
-  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  100% {
-    transform: rotateZ(359deg);
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  100% {
-    transform: rotateZ(359deg);
-  }
-}
-
 * {
   box-sizing: border-box;
 }
 
-.wrapper {
+.create-method {
+  background: rgba(82, 100, 80, 0.85);
+  height: 100%;
+}
+
+.create-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 20px;
-  background: rgba(36, 43, 35, 0.85);
 }
 
 .login {
@@ -11375,6 +11372,8 @@ body {
   background: #ffffff;
   position: relative;
   padding-bottom: 80px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -11410,7 +11409,7 @@ body {
   border: 1px solid #ddd;
   transition: border-width 0.2s ease;
   border-radius: 2px;
-  color: #ccc;
+  color: black;
 }
 
 .login input + i.fa {
@@ -11515,10 +11514,141 @@ footer a:link {
 }
 
 .show-body {
-  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.mypage-body {
+  font-size: 0.16rem;
+  background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.mypage-body .mypage-method {
+  background: rgba(82, 100, 80, 0.85);
+  height: 100%;
+}
+
+.user-body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.user-body .userinformation {
+  height: 6.5rem;
+  width: 6.5rem;
+  color: #5d627b;
+  background: #ffffff;
+  /*背景色*/
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  /*影*/
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.user-body .userinformation-content {
+  height: 75%;
+  width: 40%;
+  margin-top: 0.5rem;
+  margin-left: 0.15rem;
+}
+
+.user-body .userinformation-content .userimg {
+  display: flex;
+}
+
+.user-body .userinformation-content .userimg img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-bottom: 0.3rem;
+}
+
+.user-body .userinformation-content .username-title {
+  font-size: 0.25rem;
+  margin-bottom: 0.1rem;
+  border-left: solid 0.1rem #839a80;
+  padding-left: 0.1rem;
+}
+
+.user-body .userinformation-content .username {
+  font-size: 0.3rem;
+}
+
+.user-body .userinformation-content .myintroduce-title {
+  font-size: 0.25rem;
+  margin-bottom: 0.2rem;
+  border-left: solid 0.1rem #839a80;
+  padding-left: 0.1rem;
+}
+
+.user-body .userinformation-content .myintroduce {
+  border: #795548 solid 1px;
+  height: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.user-body .userinformation-content .cancel-the-membership a {
+  color: #795548;
+}
+
+.memox {
+  position: relative;
+  background: #fffde7;
+  width: 65%;
+  height: 6.7rem;
+  padding: 1.5em 1em;
+  box-shadow: 1px 1px 4px rgba(160, 143, 143, 0.2);
+  color: #795548;
+}
+
+.memox .userinformation-create {
+  display: contents;
+}
+
+.memox .userinformation-create a {
+  margin-left: 60%;
+  color: #795548;
+}
+
+.memox::before {
+  content: "My Profile";
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #795548;
+  border-radius: 0 0 40% 5%/0 0 15% 20%;
+  padding: 0 1em 0.1em 0.2em;
+  font-size: 0.35rem;
+  font-weight: 900;
+  transform: rotate(-5deg);
+}
+
+.memox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  margin-left: -75px;
+  width: 150px;
+  height: 30px;
+  background: rgba(245, 245, 245, 0.7);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transform: rotate(-4deg);
+}
+
+.memox ol {
+  margin: 1em 0.5em 0 2em;
+  padding: 0 0 0 0;
+}
+
+.memox ol li {
+  margin-bottom: 0.5em;
 }
 

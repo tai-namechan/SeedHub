@@ -9,14 +9,14 @@
     <title>もくもく会新規作成</title>
 </head>
 
-<body>
-    <div class="create-body">
+<body class="create-body">
+    <div  class="create-method" >
         <h1 class="createh1">
             <p class="create-title"></p>
         </h1>
-        <div class="create-method">
+        <div>
 
-            <div class="wrapper">
+            <div class="create-wrapper">
                 <form class="login" action="{{ route('posts.store') }}" method="POST">
                     @csrf
                     <p class="title">もくもく会作成</p>
@@ -60,12 +60,9 @@
                     </div>
                     <button type="submit" class="post-btn">もくもく作成</button>
                 </form>
-                <footer><a target="blank" href="http://boudra.me/">boudra.me</a></footer>
-            </div>
-
-            <div class="crreate-formlist">
                 
             </div>
+
         </div>
 
     </div>
