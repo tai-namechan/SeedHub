@@ -1,15 +1,208 @@
-$primary: #839a80;
-
+.show-html {
+  font-size: calc(100vw / 14.4);
+  height: 100%;
+}
 .show-body {
-  // background-image: url(public/img/meeting.png);
-  background-size:cover;
+  font-size: 0.16rem;
+  // background-color: #94809a;
+  background-image: url(public/img/meeting.png);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  // opacity:0.3;
+  // background: rgba(255,255,255,0.1);
+  .show-method {
+      background: rgba(darken($primary, 20%), 0.85);
+      height: 100%;
+  }
+}
+
+$primary: #839a80;
+
+.index-show-body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  .userinformation {
+      height: 6.5rem;
+      width: 6.5rem;
+      // padding: 0.5em 10em;
+      // margin: 2em 0;
+      color: #5d627b;
+      background: #ffffff; /*背景色*/
+      // border-radius: 15px;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
+      margin-top: 0.5rem;
+      // margin-bottom: 0.5rem;
+      // 中身の文字
+      text-align: center;
+  }
+  .userinformation-content {
+      // border: #795548 solid 1px;
+      height: 75%;
+      width: 40%;
+      margin-top: 0.5rem;
+      margin-left: 0.15rem;
+      .userimg {
+          display: flex;
+          // justify-content: space-around;
+          img {
+              width: 2rem;
+              height: 2rem;
+              border-radius: 50%;
+              margin-bottom: 0.3rem;
+          }
+      }
+      .username-title {
+          font-size: 0.25rem;
+          margin-bottom: 0.1rem;
+          border-left: solid 0.1rem #839a80;
+          padding-left: 0.1rem;
+      }
+      .username{
+          font-size: 0.3rem;
+      }
+      // 紹介文
+      .myintroduce-title{
+          font-size: 0.25rem;
+          margin-bottom: 0.2rem;
+          border-left: solid 0.1rem #839a80;
+          padding-left: 0.1rem;
+      }
+      .myintroduce {
+          border: #795548 solid 1px;
+          height: 0.8rem;
+          margin-bottom: 0.2rem;
+      }
+      .cancel-the-membership {
+          a {
+              color: #795548;
+          }
+      }
+  }
 }
 
 
-.show-wrapper {
-  
-//   background: rgba(#839a80, 0.5);
+.show-memox {
+  position: relative;
+  background: #fffde7;
+  width: 65%;
+  height: 6.7rem;
+  padding: 1.5em 1em;
+  // transform: rotate(-2deg);でちょこっと傾ける
+  // transform: rotate(-2deg);
+  box-shadow: 1px 1px 4px rgba(160, 143, 143, 0.2);
+  color: #795548;
+  .userinformation-create {
+      display: contents;
+
+      a {
+          margin-left: 60%;
+          color: #795548;
+      }
+  }
+  .show-meeting-box{
+    margin-left: 0.4rem;
+    .meeting-name {
+      font-size: 0.35rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.2rem;
+      border-left: solid 0.1rem #839a80;
+      padding-left: 0.1rem;
+      display: flex;
+    }
+    .meeting-detail {
+      font-size: 0.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.1rem;
+      padding-left: 0.1rem;
+      display: flex;
+    }
+    .meeting-day {
+      font-size: 0.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.1rem;
+      padding-left: 0.1rem;
+      display: flex;
+    }
+    .meeting-time {
+      font-size: 0.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.1rem;
+      padding-left: 0.1rem;
+      display: flex;
+    }
+    .meeting-url {
+      font-size: 0.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.1rem;
+      padding-left: 0.1rem;
+      display: flex;
+    }
+    .meeting-button{
+      display: flex;
+      button{
+        font-size: 0.3rem;
+        width: 1.2rem;
+        height: 0.75rem;
+        background-color: #839a80;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        &:hover{
+          color: white;
+          opacity: 0.7;
+        }
+      }
+      input{
+        font-size: 0.25rem;
+        width: 1.2rem;
+        height: 0.75rem;
+        margin-left: 0.4rem;
+        background-color: #839a80;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        &:hover{
+          color: white;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+// タイトル
+.show-memox::before {
+  content: "もくもく会詳細";
+  position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #795548;
+  // タイトル部分はborder-radiusを使って手書き風の下線に
+  border-radius: 0 0 40% 5% / 0 0 15% 20%;
+  padding: 0 1em 0.1em 0.2em;
+  font-size: 0.35rem;
+  font-weight: 900;
+  transform: rotate(-5deg);
+}
+// テープ
+.show-memox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  margin-left: -75px;
+  width: 150px;
+  height: 30px;
+  background: rgba(245, 245, 245, 0.7);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transform: rotate(-4deg);
+}
+.memox ol {
+  margin: 1em 0.5em 0 2em;
+  padding: 0 0 0 0;
+}
+.memox ol li {
+  margin-bottom: 0.5em;
 }

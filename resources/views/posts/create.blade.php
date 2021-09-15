@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="create-html">
 
 <head>
     <meta charset="UTF-8">

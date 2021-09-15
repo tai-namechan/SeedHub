@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="mypage-html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,38 +22,40 @@
                 <a href="{{ route('profiles.create') }}">プロフィール作成</a>
             </div>
 
-            <section class="userinformation-content">
-                {{-- ユーザー名 --}}
-
-                <div class="userimg">
-                    <img src="../img/meeting.png" alt="">
-                </div>
-
-                <div class="username-title">ユーザー名</div>
-                <div class="username">
-                    {{-- <h3>{{$senduserdata->name}}</h3> --}}
-                    〇〇
-                </div>
-
-                <div class="myintroduce-title">紹介文</div>
-                <div class="myintroduce">ここに紹介文</div>
-
-                <div class="cancel-the-membership">
-                    <a href="">退会ページ</a>
-                    {{-- <form action="{{route('deactive.form')}}" method="get">
-                        <input type="hidden" name="id" value="">
-                        <button type="submit" class="deletedata-button">退会ページ</button>
-                    </form> --}}
-                </div>
-            </section>
-
-            <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            </ol>
-            </div>
+            <article class="mypage-article">
+                <section class="userinformation-content">
+                    {{-- ユーザー名 --}}
+    
+                    <div class="userimg">
+                        <img src="../img/meeting.png" alt="">
+                    </div>
+    
+                    <div class="username-title">ユーザー名</div>
+                    <div class="username">
+                        {{-- <h3>{{$senduserdata->name}}</h3> --}}
+                        〇〇
+                    </div>
+    
+                    <div class="myintroduce-title">紹介文</div>
+                    <div class="myintroduce">ここに紹介文</div>
+    
+                    <div class="cancel-the-membership">
+                        <a href="">退会ページ</a>
+                        {{-- <form action="{{route('deactive.form')}}" method="get">
+                            <input type="hidden" name="id" value="">
+                            <button type="submit" class="deletedata-button">退会ページ</button>
+                        </form> --}}
+                    </div>
+                </section>
+    
+                <section class="mypage-note_wrap">
+                    <div class="mypage-note">
+    あああ
+                    </div>
+                </section>
+            </article>
+            
+        </div>
 
     </article>
 </section>

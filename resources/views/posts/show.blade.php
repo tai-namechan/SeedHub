@@ -1,46 +1,74 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="./posts/show.css">
-  {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
-  
-</head>
-<body class="show-body">
-  <div class="show-wrapper">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card mt-3">
-                  <div class="card-header">
-                      <h5>ミーティング名：{{ $post->name }}</h5>
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">詳細：{{ $post->detail }}</p>
-                    <p>投稿日時：{{ $post->created_at }}</p>
-                    <p>開催URl：
-                      <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
-                    </p>
+<html lang="en" class="show-html">
 
-                    <p>時間帯：{{ $post->timezone_id }}</p>
-                    <a onclick="history.back()" class="btn btn-primary">
-                      戻る
-                    </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" /> --}}
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>詳細ページ</title>
+</head>
+
+<body class="show-body">
+
+    <section class="show-method">
+        <article class="index-show-body">
+            <div class="show-memox huifont">
+                <div class="show-meeting-box">
+                    <div class="meeting-name">
+                        <div>ミーティング名：</div>
+                        <div>
+                          {{ $post->name }}
+                        </div>
+                    </div>
+
+                    <div class="meeting-detail">
+                        <div>詳細：</div>
+                        <div>
+                            {{ $post->detail }}
+                        </div>
+                    </div>
+
+                    <div class="meeting-day">
+                        <div>開催日：</div>
+                        <div>
+                            {{ $post->start_time->format('Y年m月d日') }}
+                        </div>
+                    </div>
+
+                    <div class="meeting-time">
+                        <div>開催時間：</div>
+                        <div>
+                          {{ $post->start_time->format('H:i') }} 〜
+                            {{ $post->end_time->format('H:i') }}
+                        </div>
+                    </div>
+
+                    <div class="meeting-url">
+                        <div>開催URl：</div>
+                        <div>
+                            <a href="{{ $post->url }}" target="_blank">{{ $post->url }}</a>
+                        </div>
+                    </div>
+
+                    <div class="meeting-button">
+                      <button type="button" onclick="history.back()">戻る</button>
                     <form action="{{ route('participant.store') }}" method="POST">
-                      @csrf
-                      <input type="hidden" value="{{ $post->id }}" name="id">
-                      <input type="submit" value="参加する" name="participant">
+                        @csrf
+                        <input type="hidden" value="{{ $post->id }}" name="id">
+                        <input type="submit" value="参加する" name="participant">
                     </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-      
-      
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </section>
+
 </body>
+
 </html>

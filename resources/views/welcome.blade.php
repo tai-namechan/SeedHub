@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="welcome-html" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
 </head>
 
 <body class="welcome-body">
-    <main>
+    <main class="welcome-main">
         <div class="welcome wave ">
             @if (Route::has('login'))
                 <div class="welcome-head">

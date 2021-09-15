@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="index-html">
 
 <head>
     <meta charset="UTF-8">
@@ -13,74 +13,79 @@
 </head>
 
 <body class="index-body">
-    <header>
-
-    </header>
-
-
     <main class="index-method">
-        <div >
-            <div class="index-wrapper">
-                <div class="container-box">
-                    <form class="___class_+?2___" method="post" action="{{ route('posts.search') }}">
-                        @csrf
-                        <select class="___class_+?3___" name="category" required>
-                            <option value="0" hidden>カテゴリー</option>
-                            <option value="1">もくもく</option>
-                            <option value="2">ワイワイ</option>
-                        </select>
-                        <select class="___class_+?4___" name="timezone" required>
-                            <option value="0" hidden>時間帯</option>
-                            <option value="1">朝</option>
-                            <option value="2">昼</option>
-                            <option value="3">夜</option>
-                        </select>
-                        <input class="search" type="submit" value="もくもく検索">
-                    </form>
-                    <form action="{{ route('posts.reset') }}" method="get">
-                        <input class="reset" type="submit" value="リセット">
-                    </form>
-                    {{-- カレンダー --}}
-                    {{-- <div class="box10">
-                <div class="___class_+?12___">
-                    <div class="___class_+?13___">
-                        <div class="___class_+?14___">
-                            <div class="index-card-header">{{ $calendar->getTitle() }}</div>
-                            <div class="index-card-body">
-                                {!! $calendar->render() !!}
+        <div class="index-note_wrap">
+            <div class="index-note">
+                <div>
+                    <div class="index-wrapper">
+                        
+                      <a href="{{ route('profiles.index') }}">マイページ</a>
+                        <div class="container-box">
+                            <form class="___class_+?2___" method="post" action="{{ route('posts.search') }}">
+                                @csrf
+                                <select class="___class_+?3___" name="category" required>
+                                    <option value="0" hidden>カテゴリー</option>
+                                    <option value="1">もくもく</option>
+                                    <option value="2">ワイワイ</option>
+                                </select>
+                                <select class="___class_+?4___" name="timezone" required>
+                                    <option value="0" hidden>時間帯</option>
+                                    <option value="1">朝</option>
+                                    <option value="2">昼</option>
+                                    <option value="3">夜</option>
+                                </select>
+                                <input class="search" type="submit" value="もくもく検索">
+                            </form>
+                            <form action="{{ route('posts.reset') }}" method="get">
+                                <input class="reset" type="submit" value="リセット">
+                            </form>
+                            {{-- カレンダー --}}
+                            {{-- <div class="box10">
+                        <div class="___class_+?12___">
+                            <div class="___class_+?13___">
+                                <div class="___class_+?14___">
+                                    <div class="index-card-header">{{ $calendar->getTitle() }}</div>
+                                    <div class="index-card-body">
+                                        {!! $calendar->render() !!}
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div> --}}
+                        </div>
+                        {{-- 投稿一覧 --}}
+                        <div class="meetings">
+                            @foreach ($meetings as $meeting)
+                                <div class="index-memox">
+                                    
+                                    <table class="index-box-content">
+                                        
+                                        <tr class="index-name">
+                                            <th>ミーティング名</th>
+                                            <td>
+                                                <a href="{{ route('posts.show', $meeting->id) }}" class="meeting_name">
+                                                    {{ $meeting->name }}
+                                                </a> 
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="index-day">
+                                            <th>開催日</th>
+                                            <td>{{ $meeting->start_time->format('Y年m月d日') }}</td>
+                                        </tr>
+                                        <tr class="index-time">
+                                            <th>時間帯</th>
+                                            <td>{{ $meeting->start_time->format('H:i') }} 〜
+                                                {{ $meeting->end_time->format('H:i') }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div> --}}
-                </div>
-                {{-- 投稿一覧 --}}
-                <div class="meetings">
-                    @foreach ($meetings as $meeting)
-                        <div class="box15">
-                            <div class="right">
-                                <h3>
-                                    <a href="{{ route('posts.show', $meeting->id) }}" class="meeting_name">
-                                        {{ $meeting->name }}
-                                    </a>
-                                </h3>
-                            </div>
-                            <table class="index-box-content">
-                                <tr class="index-day">
-                                    <th>開催日</th>
-                                    <td>{{ $meeting->start_time->format('Y年m月d日') }}</td>
-                                </tr>
-                                <tr class="index-time">
-                                    <th>時間帯</th>
-                                    <td>{{ $meeting->start_time->format('H:i') }} 〜
-                                        {{ $meeting->end_time->format('H:i') }}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    @endforeach
-                </div>
             </div>
-        </div>
+          </div>
     </main>
 </body>
 
