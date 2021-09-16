@@ -1,0 +1,7 @@
+.show-body {
+    background-image: url(public/img/meeting.png);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }

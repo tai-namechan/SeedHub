@@ -1,0 +1,168 @@
+$primary: #839a80;
+
+.index-html {
+    font-size: calc(100vw / 14.4);
+    height: 100%;
+}
+.index-body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background-image: url(public/img/meeting.png);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+* {
+  box-sizing: border-box;
+}
+.index-method{
+    background: rgba(darken($primary,20%), 0.85);
+}
+.index-note_wrap{
+    background: #fff;
+    padding: 1em 2em;
+    width: 70%;
+    height: 80%;
+    margin: 0px auto;
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.7);
+  }
+  .index-note{
+    height: 80%;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) 97%,
+        #ddd 97%,
+        #ddd 100%
+      );
+    background-size:100% 2em;
+    line-height:2;
+  }
+.index-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.meeting_name{
+    font-size: 0.28rem;
+}
+.index-box-content{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    transform: rotate(+2deg);
+    .index-name {
+        border-left: solid 0.1rem #839a80;
+        margin-bottom: 20px;
+    }
+}
+.index-time{
+    margin-top: 0.5rem;
+}
+.container{
+    
+     &-box{
+        margin-top: 0.5rem;
+        .btn-border-gradient-wrap {
+            display: inline-block;
+            padding: 0.02rem;
+            border-radius: 0.05rem;
+            background: -webkit-gradient(linear, left top, right top, from(yellow), to(green));
+            background: -webkit-linear-gradient(left, yellow, green);
+            background: linear-gradient(to right, yellow, green);
+            margin: 0 0.1rem;
+            .btn-border-gradient {
+                color: #8fc31f;
+                background: #495058;
+            }
+            .btn {
+                font-size: 0.16rem;
+                font-weight: 700;
+                line-height: 1.5;
+                position: relative;
+                display: inline-block;
+                padding: 0.1rem 0.4rem;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+                letter-spacing: 0.1em;
+                border-radius: 0.05rem;
+            }
+            &:hover {
+                background: -webkit-gradient(linear, right top, left top, from(yellow), to(green));
+                background: -webkit-linear-gradient(right, yellow, green);
+                background: linear-gradient(to left, yellow, green);
+            }
+        }
+    }
+}
+
+.index-memox {
+    position: relative;
+    background: #fffde7;
+    width: 7rem;
+    height: 3.5rem;
+    padding: 1.5em 1em;
+    margin: 2em 0;
+    margin-bottom: 0.6rem;
+    // transform: rotate(-2deg);でちょこっと傾ける
+    transform: rotate(-2deg);
+    box-shadow: 1px 1px 4px rgba(160, 143, 143, 0.2);
+    color: #795548;
+    th {
+        font-size: 0.3rem;
+        padding-left: 0.1rem;
+        // transform: rotate(+4deg);
+    }
+    td {
+        font-size: 0.3rem;
+        margin: 0; 
+        padding-left: 0.25rem;
+    }
+}
+// タイトル
+.index-memox::before {
+    content: "もくもく会";
+    position: relative;
+    display: inline-block;
+    border-bottom: 4px solid #795548;
+    // タイトル部分はborder-radiusを使って手書き風の下線に
+    border-radius: 0 0 40% 5% / 0 0 15% 20%;
+    padding: 0 1em 0.1em 0.2em;
+    font-size: 0.25rem;
+    font-weight: bold;
+    transform: rotate(-5deg);
+}
+// テープ
+.index-memox::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    margin-left: -75px;
+    width: 150px;
+    height: 30px;
+    background: rgba(245, 245, 245, 0.7);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    transform: rotate(-4deg);
+}
+.memox ol {
+    margin: 1em 0.5em 0 2em;
+    padding: 0 0 0 0;
+}
+.memox ol li {
+    margin-bottom: 0.5em;
+}

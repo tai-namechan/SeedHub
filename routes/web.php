@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/sample', function () {
+    return view('sample');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -41,3 +45,19 @@ Route::post('/search', 'PostController@search')->name('posts.search');
 
 // 検索のリセット機能
 Route::get('/reset', 'PostController@reset')->name('posts.reset');
+
+
+
+// 詳細画面で「参加する」を押した時の処理
+Route::post('/participant/store', 'ParticipantController@store')->name('participant.store');
+
+// マイページのRoute
+Route::get('/mypages', 'ProfileController@index')->name('profiles.index');
+
+// ユーザーのプロフィール作成
+Route::get('/profiles/create', 'ProfileController@create')->name('profiles.create');
+
+Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store');
+
+// カレンダー
+Route::get('/calendar', 'CalendarController@show');
