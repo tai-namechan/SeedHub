@@ -48,9 +48,9 @@
                 <div class="welcome-content__catch-copy">
                     <p>Platform for engineers by engineers</p>
                 </div>
-                {{-- <div class="link">
+               <div class="link">
                     <a href="/sample">Sample</a>
-                </div> --}}
+                </div> 
             </div>
             <canvas id="waveCanvas"></canvas>
         </div>
