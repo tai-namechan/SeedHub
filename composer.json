@@ -48,13 +48,7 @@
         }
     },
     "minimum-stability": "dev",
-    "scripts": {
-        
-        
-        "compile": [
-            "@php -r \"file_exists('.env') || copy('.env.heroku', '.env');\""
-        ]
-    },
+    
     "prefer-stable": true
     
 }
