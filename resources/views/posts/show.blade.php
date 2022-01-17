@@ -9,9 +9,33 @@
     {{-- <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script> --}}
     {{-- <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" /> --}}
 
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="../css/posts/sample.css">
     <title>詳細ページ</title>
 </head>
+
+
+<header class="sample-header">
+    <div class="sample-openbtn4"><span></span><span></span><span></span></div>
+
+    <!-- <script type="text/javascript" src="../views/users/script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-4/js/5-2-4.js"></script>
+
+    <!-- ロゴ -->
+
+    <div class="btn-border-gradient-wrap">
+        <a href="{{ url('/') }}" class="btn btn-border-gradient">SeedHub</a>
+    </div>
+    <!-- メールアイコン -->
+
+    <div class="sample-mailbtn">
+        <i class="sample-far fa-envelope"></i>
+        <div class="sample-mail icon"></div>
+    </div>
+
+    <script src="{{ asset('../css/posts/script.js') }}"></script>
+</header>
 
 <body class="show-body">
 

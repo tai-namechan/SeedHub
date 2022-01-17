@@ -1,0 +1,217 @@
+/* 全体に対して */
+* {
+    padding: 0;
+    margin: 0;
+}
+/* ヘッダー */
+  .sample-header {
+    width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      border: solid black 0.5px;
+      background:rgb(44, 42, 42) 0.5px;
+  }
+  /*==================================================
+        MENUがCLOSEに
+  ===================================*/
+  
+  /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+  .sample-openbtn4{
+    position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+    /* background:rgb(44, 42, 42) 0.5px; */
+    background: linear-gradient(to right, yellow, green);
+    cursor: pointer;
+      width: 50px;
+      height:50px;
+    border-radius: 5px;
+  }
+  
+  /*ボタン内側*/
+  .sample-openbtn4 span{
+      display: inline-block;
+      transition: all .4s;/*アニメーションの設定*/
+      position: absolute;
+      left: 14px;
+      height: 2px;
+      border-radius: 5px;
+    /* background: rgb(0, 0, 0); */
+    background: rgb(44, 42, 42) 0.5px;
+    /* color: #8fc31f; */
+    
+      width: 45%;
+    }
+  
+  
+  .sample-openbtn4 span:nth-of-type(1) {
+    top:13px; 
+  }
+  
+  .sample-openbtn4 span:nth-of-type(2) {
+    top:19px;
+  }
+  
+  .sample-openbtn4 span:nth-of-type(3) {
+    top:25px;
+  }
+  
+  .sample-openbtn4 span:nth-of-type(3)::after {
+    content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top:5px;
+    left: -7px;
+    /* color: rgb(0, 0, 0); */
+    color: rgb(44, 42, 42);
+    /* background: rgb(44, 42, 42) 0.5px; */
+    font-size: 0.13rem;
+    text-transform: uppercase;
+  }
+  
+  /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+  
+  .sample-openbtn4.active span:nth-of-type(1) {
+      top: 14px;
+      left: 18px;
+      transform: translateY(6px) rotate(-45deg);
+      width: 30%;
+  }
+  
+  .sample-openbtn4.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  
+  .sample-openbtn4.active span:nth-of-type(3){
+      top: 26px;
+      left: 18px;
+      transform: translateY(-6px) rotate(45deg);
+      width: 30%;
+  }
+  
+  .sample-openbtn4.active span:nth-of-type(3)::after {
+    content:"Close";/*3つ目の要素のafterにClose表示を指定*/
+      transform: translateY(0) rotate(-45deg);
+    top:5px;
+    left:4px;
+  }
+
+  /*========= バーガーメニューの中 ===============*/
+
+   #menu {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: #52bcc0;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: scale(0);/*scaleをはじめは0に*/
+    transition: all .6s;
+  }
+  #menu.open {
+    transform: translate(0);
+  }
+  #menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  #menu li {
+    padding: 8px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+
+
+/* アコーディオン */
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+  /* メールアイコン */
+
+  .sample-mailbtn {
+    position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+    background:rgb(44, 42, 42) 0.5px;
+    /* background: linear-gradient(to right, yellow, green); */
+    cursor: pointer;
+      width: 50px;
+      height:50px;
+
+    border-radius: 5px;
+  }
+
+  .sample-far {
+      font-size: 30px;
+      margin-top: 12%;
+      margin-left: 20%;
+  }
+  .sample-far::after {
+    /* content:"Contact"; */
+    /*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top:37px;
+    left:-2px;
+    /* color: rgb(0, 0, 0); */
+    /* background: rgb(44, 42, 42) 0.5px; */
+    color: rgb(44, 42, 42);
+    font-size: 0.2rem;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+  }
+
+
+/* ヘッダーのロゴ */
+.sample-lead{
+    font-size: 0.5rem;
+    color: #495058;
+}
+
+
+.sample-header .btn-border-gradient-wrap {
+  display: inline-block;
+  padding: 0.025rem;
+  border-radius: 0.05rem;
+  background: linear-gradient(to right, yellow, green);
+  margin: 0 0.1rem;
+}
+
+.sample-header .btn-border-gradient-wrap .btn-border-gradient {
+  color: #8fc31f;
+  background: rgb(44, 42, 42) 0.5px;
+}
+
+.sample-header .btn-border-gradient-wrap .btn {
+  font-size: 0.2rem;
+  font-weight: 700;
+  /* line-height: 1.3; */
+  position: relative;
+  display: inline-block;
+  padding: 0.1rem 0.3rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.05rem;
+}
+
+.sample-header .btn-border-gradient-wrap:hover {
+  background: linear-gradient(to left, yellow, green);
+}

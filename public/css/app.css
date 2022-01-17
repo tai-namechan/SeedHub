@@ -11156,7 +11156,7 @@ body canvas {
 
 .welcome-body .welcome-main .welcome-head .btn-border-gradient-wrap .btn-border-gradient {
   color: #8fc31f;
-  background: #495058;
+  background: rgb(44, 42, 42);
 }
 
 .welcome-body .welcome-main .welcome-head .btn-border-gradient-wrap .btn {
@@ -11209,11 +11209,11 @@ body canvas {
 .index-body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
-  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
-  background-size: cover;
+  /* background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7); */
+  /* background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 
 * {
@@ -11221,15 +11221,28 @@ body canvas {
 }
 
 .index-method {
-  background: rgba(82, 100, 80, 0.85);
+  /* background: rgba(82, 100, 80, 0.85); */
+    background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+.index-notebody {
+  background: rgba(82, 100, 80, 0.85);
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
 .index-note_wrap {
   background: #fff;
   padding: 1em 2em;
   width: 70%;
   height: 80%;
-  margin: 0px auto;
+  margin-top: 35px;
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -11375,11 +11388,11 @@ body canvas {
 
 .create-body {
   font-size: 0.16rem;
-  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
+  /* background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: scroll; */
 }
 
 * {
@@ -11387,10 +11400,19 @@ body canvas {
 }
 
 .create-method {
-  background: rgba(82, 100, 80, 0.85);
+  /* background: rgba(82, 100, 80, 0.85); */
+  background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   height: 100%;
 }
 
+.create-note{
+  background: rgba(82, 100, 80, 0.85);
+  height:100%;
+}
 .create-wrapper {
   display: flex;
   align-items: center;
@@ -11556,6 +11578,16 @@ footer a:link {
 
 .show-body {
   font-size: 0.16rem;
+  /* background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; */
+}
+
+.show-body .show-method {
+  /* background: rgba(82, 100, 80, 0.85); */
+  height: 100%;
   background-image: url(/images/meeting.png?e01714b982c084b8d06d2f1803df86b7);
   background-size: cover;
   background-position: center;
@@ -11563,12 +11595,8 @@ footer a:link {
   background-attachment: scroll;
 }
 
-.show-body .show-method {
-  background: rgba(82, 100, 80, 0.85);
-  height: 100%;
-}
-
 .index-show-body {
+  background: rgba(82, 100, 80, 0.85);
   display: flex;
   justify-content: center;
   height: 100%;
@@ -11773,19 +11801,26 @@ footer a:link {
 
 .mypage-body {
   font-size: 0.16rem;
-  background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
-  background-size: cover;
+  /* background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411); */
+  /* background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: scroll; */
 }
 
 .mypage-body .mypage-method {
-  background: rgba(82, 100, 80, 0.85);
+  /* background: rgba(82, 100, 80, 0.85); */
   height: 100%;
+    background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .user-body {
+  background: rgba(82, 100, 80, 0.85);
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   height: 100%;
@@ -12239,11 +12274,11 @@ footer a:link {
 
 .profile-create-body {
   font-size: 0.16rem;
-  background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
+  /* background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: scroll; */
 }
 
 * {
@@ -12251,8 +12286,18 @@ footer a:link {
 }
 
 .profile-create-method {
-  background: rgba(82, 100, 80, 0.85);
+  /* background: rgba(82, 100, 80, 0.85); */
+  background-image: url(/images/meeting2.png?0305d09a45a4946278371f9d1723a411);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   height: 100%;
+}
+
+.profile-create-note{
+  background: rgba(82, 100, 80, 0.85);
+  height:100%;
 }
 
 .profile-create-wrapper {

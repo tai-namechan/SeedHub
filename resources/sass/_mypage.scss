@@ -5,14 +5,19 @@
 .mypage-body {
     font-size: 0.16rem;
     // background-color: #94809a;
-    background-image: url(public/img/meeting2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    // background-image: url(public/img/meeting2.png);
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-attachment: scroll;
     // opacity:0.3;
     // background: rgba(255,255,255,0.1);
     .mypage-method {
+        background-image: url(public/img/meeting2.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
         background: rgba(darken($primary, 20%), 0.85);
         height: 100%;
     }

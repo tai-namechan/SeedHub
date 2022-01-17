@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <title>Laravel</title>
 
@@ -48,9 +48,9 @@
                 <div class="welcome-content__catch-copy">
                     <p>Platform for engineers by engineers</p>
                 </div>
-               <div class="link">
+               <!-- <div class="link">
                     <a href="/sample">Sample</a>
-                </div> 
+                </div>  -->
             </div>
             <canvas id="waveCanvas"></canvas>
         </div>

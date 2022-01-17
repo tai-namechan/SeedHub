@@ -6,10 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="../css/posts/sample.css">
 </head>
-    <body class="profile-create-body">
+
+
+
+<header class="sample-header">
+    <div class="sample-openbtn4"><span></span><span></span><span></span></div>
+
+    <!-- <script type="text/javascript" src="../views/users/script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-4/js/5-2-4.js"></script>
+
+    <!-- ロゴ -->
+
+    <div class="btn-border-gradient-wrap">
+        <a href="{{ url('/') }}" class="btn btn-border-gradient">SeedHub</a>
+    </div>
+    <!-- メールアイコン -->
+
+    <div class="sample-mailbtn">
+        <i class="sample-far fa-envelope"></i>
+        <div class="sample-mail icon"></div>
+    </div>
+
+    <script src="{{ asset('../css/posts/script.js') }}"></script>
+</header>
+
+<body class="profile-create-body">
       <div  class="profile-create-method" >
-          <h1 class="createh1">
+        <div class="profile-create-note">
+
+        <h1 class="createh1">
               <p class="create-title"></p>
           </h1>
           <div>
@@ -37,6 +65,7 @@
               
           </div>
           </div>
+        </div>
   
       </div>
 </body>

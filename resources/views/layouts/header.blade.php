@@ -25,7 +25,8 @@
         <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-4/js/5-2-4.js"></script>
 
         <!-- ロゴ -->
-        <p class="lead">SeedHub</p>
+        <!-- <p class="lead">SeedHub</p> -->
+        <a href="{{ url('/') }}"><p class="sample-lead">SeedHub</p></a>
         <!-- メールアイコン -->
         <div class="mailbtn">
             <i class="far fa-envelope"></i>
