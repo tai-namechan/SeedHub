@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="{{ asset('./css/posts/index.css') }}">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>もくもく会募集一覧表示（作成中）</title>
+  <link rel="stylesheet" href="../css/posts/kusa.css">
 </head>
 <body>
   <header>
@@ -15,6 +16,25 @@
 
 
   <main>
+         
+    <div class="calendar-box justify-content-center">
+        <div class="calendar-title">
+            <div class="calendar-card">
+                <div class="card-header">{{ $calendar->getTitle() }}</div>
+                <div class="card-body">
+                        {!! $calendar->render() !!}
+                </div>
+                <div class="card-kusa">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <div class="container">
       <div class="">
         <form class=""method="post" action="{{ route('posts.search') }}">
@@ -58,6 +78,7 @@
         @endforeach
       </div>
     </div>
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
