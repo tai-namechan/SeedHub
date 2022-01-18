@@ -10942,6 +10942,7 @@ a.text-dark:focus {
   }
 }
 
+
 body {
   font-size: 0.16rem;
 }
@@ -12458,3 +12459,52 @@ footer a:link {
   text-decoration: none;
 }
 
+.home-card{
+  display: flex;
+  justify-content: space-around;
+}
+.home-card img {
+  
+  vertical-align: middle;
+  border-style: none;
+  width: 900px;
+  
+  margin-top: 20px;
+}
+
+.home-card-header{
+  padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(82, 100, 80, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.home-font{
+  font-size: 15px;
+}
+
+.home-navbar-nav{
+  width:100%;
+  font-size: 15px;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 4px;
+    margin-right:5px;
+    /* color: white; */
+    list-style: none;
+    
+}
+
+.home-nav-link{
+  display: block;
+  color:white;
+  text-decoration:none;
+  margin-top:5px;
+  padding-right:10px;
+}
+
+.home-nav-link:hover{
+  display: block;
+  color:white;
+  text-decoration:none;
+}

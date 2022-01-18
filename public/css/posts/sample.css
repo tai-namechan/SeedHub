@@ -67,7 +67,21 @@
     font-size: 0.13rem;
     text-transform: uppercase;
   }
+
+  .home-sample-openbtn4 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+  /* background: rgb(0, 0, 0); */
+  background: rgb(44, 42, 42) 0.5px;
+  /* color: #8fc31f; */
   
+    width: 45%;
+  }
+
   /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
   
   .sample-openbtn4.active span:nth-of-type(1) {
@@ -150,6 +164,7 @@
       height:50px;
 
     border-radius: 5px;
+    left:-10px;
   }
 
   .sample-far {
@@ -214,4 +229,35 @@
 
 .sample-header .btn-border-gradient-wrap:hover {
   background: linear-gradient(to left, yellow, green);
+}
+
+.sample-header .btn-border-gradient-wrap .home-btn {
+  font-size: 1.3rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 0.1rem 0.2rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.05rem;
+}
+
+.home-sample-mailbtn {
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  background:rgb(44, 42, 42) 0.5px;
+  /* background: linear-gradient(to right, yellow, green); */
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+
+  border-radius: 5px;
+  left: -80px;
 }
