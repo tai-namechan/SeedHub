@@ -6,10 +6,10 @@
         <div class="register-wrapper">
             <form class="login" method="POST" action="{{ route('register') }}">
                 @csrf
-                <p class="title">{{ __('Register') }}</p>
+                <p class="title register-title">新規登録フォーム</p>
 
                 <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                    <label for="name" class="register-title col-md-4 col-form-label text-md-right">ニックネーム</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
@@ -25,7 +25,7 @@
 
 
                 <div class="form-group row">
-                    <label for="email" class=" col-md-4 col-form-label text-md-right ___class_+?31___">{{ __('E-Mail Address') }}</label>
+                    <label for="email" class="register-title col-md-4 col-form-label text-md-right ___class_+?31___">メールアドレス</label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" name="email"
@@ -40,7 +40,7 @@
 
                 </div>
                 <div class="form-group row">
-                    <label for="password" class=" col-md-4 col-form-label text-md-right ___class_+?36___">{{ __('Password') }}</label>
+                    <label for="password" class="register-title col-md-4 col-form-label text-md-right ___class_+?36___">パスワード</label>
 
                     <div class=" col-md-6 ___class_+?37___">
                         <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror"
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="password-confirm" class=" col-md-4 col-form-label text-md-right ___class_+?41___">{{ __('Confirm Password') }}</label>
+                    <label for="password-confirm" class="register-title col-md-4 col-form-label text-md-right ___class_+?41___">確認用 パスワード</label>
 
                     <div class=" col-md-6 ___class_+?42___">
                         <input id="password-confirm" type="password" class=" form-control ___class_+?43___" name="password_confirmation"
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="post-btn">{{ __('Register') }}</button>
+                <button type="submit" class="post-btn">登録</button>
             </form>
 
         </div>

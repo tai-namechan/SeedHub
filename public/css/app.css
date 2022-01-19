@@ -12214,11 +12214,12 @@ footer a:link {
 
 .login .title {
   color: #444;
-  font-size: 1.2em;
+  font-size: 30px;
   font-weight: bold;
   margin: 10px 0 30px 0;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
+  text-align:center;
 }
 
 .login button {
@@ -12226,6 +12227,7 @@ footer a:link {
   height: 100%;
   padding: 10px 10px;
   background: #839a80;
+  font-size:20px;
   color: #fff;
   display: block;
   border: none;
@@ -12497,7 +12499,7 @@ footer a:link {
 
 .home-nav-link{
   display: block;
-  color:white;
+  color: #8fc31f;
   text-decoration:none;
   margin-top:5px;
   padding-right:10px;
@@ -12505,6 +12507,10 @@ footer a:link {
 
 .home-nav-link:hover{
   display: block;
-  color:white;
+  color:#b6f72a;
   text-decoration:none;
+}
+
+.register-title{
+  font-size:15px;
 }
