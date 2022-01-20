@@ -39,6 +39,11 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([       // <-- ここがバリデーション部分
+            'introduction' => 'required',
+        ]);
+
+
         $login_user_id = Auth::id();
         // dd($login_user_id);
 

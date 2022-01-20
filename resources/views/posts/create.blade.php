@@ -34,7 +34,7 @@
 </header>
 
 <body class="create-body">
-    <div  class="create-method" >
+    <div class="create-method">
         <h1 class="createh1">
             <p class="create-title"></p>
         </h1>
@@ -42,38 +42,63 @@
 
             <div class="create-wrapper">
                 <form class="login" action="{{ route('posts.store') }}" method="POST">
-                    @csrf
+                    {{ csrf_field() }}
                     <p class="title">もくもく会作成</p>
                     <div class="create-form-group">
                         <label>ミーティング名</label>
                         <input class="create-form-control" type="text" placeholder="タイトルを入力して下さい" name="meeting">
                         <i class="fa fa-user"></i>
+                        @if ($errors->has('meeting'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※ミーティング名を入力してください</p>
+                        @endif
                     </div>
+
                     <div class="create-form-group">
                         <label>開始時間</label>
-                        <input class="create-form-control" type="datetime-local" placeholder="開始時間を設定して下さい"
-                            name="starttime">
+                        <input class="create-form-control" type="datetime-local" placeholder="開始時間を設定して下さい" name="starttime">
+                        @if ($errors->has('starttime'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※開始時間を選択してください</p>
+                        @endif
                     </div>
+
                     <div class="create-form-group">
                         <label>終了時間</label>
-                        <input class="create-form-control" type="datetime-local" placeholder="終了時間を設定して下さい"
-                            name="endtime">
+                        <input class="create-form-control" type="datetime-local" placeholder="終了時間を設定して下さい" name="endtime">
+                        @if ($errors->has('endtime'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※終了時間を選択してください</p>
+                        @endif
                     </div>
+
                     <div class="create-form-group">
                         <label>詳細情報</label>
                         <textarea class="create-form-control" placeholder="詳細情報を入力してください" name="detail"></textarea>
+                        @if ($errors->has('detail'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※詳細情報を入力してください</p>
+                        @endif
                     </div>
+
                     <div class="create-form-group">
                         <label>URL</label>
                         <input class="create-form-control" type="text" placeholder="URLを入力して下さい" name="url">
+                        @if ($errors->has('url'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※URLを入力してください</p>
+                        @endif
                     </div>
+
                     <div class="create-form-group">
                         <label>カテゴリー</label>
                         <select name="category">
                             <option value="1">ワイワイ</option>
                             <option value="2">もくもく</option>
                         </select>
+                       
                     </div>
+
                     <div class="create-form-group">
                         <label>時間帯</label>
                         <select name="timezone">
@@ -81,10 +106,11 @@
                             <option value="2">昼</option>
                             <option value="3">夜</option>
                         </select>
+                        
                     </div>
                     <button type="submit" class="post-btn">もくもく作成</button>
                 </form>
-                
+
             </div>
 
         </div>

@@ -44,7 +44,7 @@
             <div class="profile-create-wrapper">
               <form class="profile-create-form" action="{{ route('profiles.store') }}" method="POST">
                 <p  class="title">マイプロフィール作成</p>
-                @csrf
+                {{ csrf_field() }}
                 {{-- プロフィール写真 --}}
                 <div class="form-group picture">
                   <label class="space">写真</label>
@@ -58,6 +58,10 @@
                 <div >
                     <label>紹介文</label>
                     <textarea class="create-form-control" placeholder="詳細情報を入力してください" name="introduction"></textarea>
+                    @if ($errors->has('introduction'))
+                        <!-- ここ追加 -->
+                        <p class="validation">※自己紹介文を入力してください</p>
+                        @endif
                 </div>
                 
                 <button type="submit" class="post-btn">もくもく作成</button>

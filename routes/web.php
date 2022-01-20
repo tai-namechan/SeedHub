@@ -61,3 +61,9 @@ Route::post('/profiles/store', 'ProfileController@store')->name('profiles.store'
 
 // カレンダー
 Route::get('/calendar', 'CalendarController@show');
+
+// バリデーション
+Route::post('sample', 'FormController@postValidates');
+
+// getで取得した値にバリデーション実行
+// Route::get('sample', 'FormController@getValidates');

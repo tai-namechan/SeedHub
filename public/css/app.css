@@ -12514,3 +12514,11 @@ footer a:link {
 .register-title{
   font-size:15px;
 }
+
+/* バリデーション */
+.validation {
+display: inline;
+/* font-size: ; */
+color: #FA5C65;
+margin: 0.3rem;
+}

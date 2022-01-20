@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Meeting;
 use Auth;
 use App\Calendar\CalendarView;
+// Validatorファザードを使用するのでValidatorをuseする
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -39,6 +41,16 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([       // <-- ここがバリデーション部分
+            'meeting' => 'required',
+            'starttime' => 'required',
+            'endtime' => 'required',
+            'detail' => 'required',
+            'url' => 'required',
+            'category' => 'required',
+            'timezone' => 'required',
+        ]);
+
         $login_user_id = Auth::id();
         // dd($login_user_id);
 
