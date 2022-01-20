@@ -19,15 +19,17 @@ class ProfileController extends Controller
         }
 
         $login_user_id = Auth::id();
-        $profiles = Profile::all();
+        $profiles = Auth::user()->profiles;
+        $userdata = Auth::user();
         // $profile = $profiles[0]->user_id;
-        // dd($profile);
+        // dd($profiles);
+        // dd($userdata);
 
         // 草生やすためのもの
         $calendar = new CalendarView(time());
         // dd($calendar);
 
-        return view('users.mypage', ['profiles'=>$profiles, "calendar" => $calendar,]);
+        return view('users.mypage', ['sendprofiles'=>$profiles, "calendar" => $calendar, 'senduserdata'=> $userdata, ]);
     }
 
 
@@ -72,5 +74,12 @@ class ProfileController extends Controller
     function show($id)
     {
 
+    }
+
+    public function mypage(){
+        $profiles = Auth::user()->profiles;
+        $userdata = Auth::user();
+        // $profile = $profiles[0]->user_id;
+        dd($profiles);
     }
 }
