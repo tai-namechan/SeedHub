@@ -57,19 +57,13 @@
                     <div class="create-form-group">
                         <label>開始時間</label>
                         <input class="create-form-control" type="datetime-local" placeholder="開始時間を設定して下さい" name="starttime">
-                        @if ($errors->has('starttime'))
-                        <!-- ここ追加 -->
-                        <p class="validation">※開始時間を選択してください</p>
-                        @endif
+                        
                     </div>
 
                     <div class="create-form-group">
                         <label>終了時間</label>
                         <input class="create-form-control" type="datetime-local" placeholder="終了時間を設定して下さい" name="endtime">
-                        @if ($errors->has('endtime'))
-                        <!-- ここ追加 -->
-                        <p class="validation">※終了時間を選択してください</p>
-                        @endif
+                        
                     </div>
 
                     <div class="create-form-group">
