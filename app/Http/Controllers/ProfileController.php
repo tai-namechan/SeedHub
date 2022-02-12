@@ -80,6 +80,6 @@ class ProfileController extends Controller
         $profiles = Auth::user()->profiles;
         $userdata = Auth::user();
         // $profile = $profiles[0]->user_id;
-        dd($profiles);
+        // dd($profiles);
     }
 }
