@@ -15,8 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // モデルにホワイトリストの設定tokenとavatarの追加
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'token', 'avatar',
     ];
 
     /**

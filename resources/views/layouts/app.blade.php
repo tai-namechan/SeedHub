@@ -18,8 +18,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="../css/posts/sample.css">
+    <link rel="stylesheet" href="../css/posts/bootstrap-social.css">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/ff9f3f2de1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,7 +34,7 @@
             <!-- <script type="text/javascript" src="../views/users/script.js"></script> -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
             <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-4/js/5-2-4.js"></script>
-            
+
             <!-- ロゴ -->
 
             <div class="btn-border-gradient-wrap">

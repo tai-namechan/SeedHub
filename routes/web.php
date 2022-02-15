@@ -67,3 +67,11 @@ Route::post('sample', 'FormController@postValidates');
 
 // getで取得した値にバリデーション実行
 // Route::get('sample', 'FormController@getValidates');
+
+// sns認証
+
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+// Route::get('login/twitter', 'Auth\TwitterController@redirectToProvider');
+// Route::get('login/twitter/callback', 'Auth\TwitterController@handleProviderCallback');
