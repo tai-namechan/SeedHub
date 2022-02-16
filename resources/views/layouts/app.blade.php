@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../css/posts/bootstrap-social.css">
     <!-- icon -->
     <script src="https://kit.fontawesome.com/ff9f3f2de1.js" crossorigin="anonymous"></script>
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
 </head>
 
 <body>

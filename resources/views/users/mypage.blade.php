@@ -17,6 +17,8 @@
     <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
 </head>
 
 <header class="sample-header">

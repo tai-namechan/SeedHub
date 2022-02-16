@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/posts/sample.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>もくもく会募集一覧表示（作成中）</title>
 

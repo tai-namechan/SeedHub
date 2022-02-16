@@ -10,6 +10,9 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon"  href="{{ asset('/favicon.ico') }}">
 </head>
 
 <body class="welcome-body">

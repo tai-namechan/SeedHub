@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
     <link rel="stylesheet" href="../css/posts/sample.css">
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
     <title>もくもく会新規作成</title>
 </head>
 
@@ -57,13 +59,13 @@
                     <div class="create-form-group">
                         <label>開始時間</label>
                         <input class="create-form-control" type="datetime-local" placeholder="開始時間を設定して下さい" name="starttime">
-                        
+
                     </div>
 
                     <div class="create-form-group">
                         <label>終了時間</label>
                         <input class="create-form-control" type="datetime-local" placeholder="終了時間を設定して下さい" name="endtime">
-                        
+
                     </div>
 
                     <div class="create-form-group">
@@ -90,7 +92,7 @@
                             <option value="1">ワイワイ</option>
                             <option value="2">もくもく</option>
                         </select>
-                       
+
                     </div>
 
                     <div class="create-form-group">
@@ -100,7 +102,7 @@
                             <option value="2">昼</option>
                             <option value="3">夜</option>
                         </select>
-                        
+
                     </div>
                     <button type="submit" class="post-btn">もくもく作成</button>
                 </form>

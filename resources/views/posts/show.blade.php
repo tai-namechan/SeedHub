@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
     <link rel="stylesheet" href="../css/posts/sample.css">
+    <!-- ファビコン -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
     <title>詳細ページ</title>
 </head>
 
@@ -46,7 +48,7 @@
                     <div class="meeting-name">
                         <div>ミーティング名：</div>
                         <div>
-                          {{ $post->name }}
+                            {{ $post->name }}
                         </div>
                     </div>
 
@@ -67,7 +69,7 @@
                     <div class="meeting-time">
                         <div>開催時間：</div>
                         <div>
-                          {{ $post->start_time->format('H:i') }} 〜
+                            {{ $post->start_time->format('H:i') }} 〜
                             {{ $post->end_time->format('H:i') }}
                         </div>
                     </div>
@@ -80,12 +82,12 @@
                     </div>
 
                     <div class="meeting-button">
-                      <button type="button" onclick="history.back()">戻る</button>
-                    <form action="{{ route('participant.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" value="{{ $post->id }}" name="id">
-                        <input type="submit" value="参加する" name="participant">
-                    </form>
+                        <button type="button" onclick="history.back()">戻る</button>
+                        <form action="{{ route('participant.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" value="{{ $post->id }}" name="id">
+                            <input type="submit" value="参加する" name="participant">
+                        </form>
                     </div>
                 </div>
             </div>
