@@ -71,7 +71,7 @@
         <a class="socialite-btn btn-facebook" href="">
             <i class="fa fa-facebook"> <span>Sign in with Facebook</span> </i>
         </a>
-        <a class="socialite-btn btn-google" href="">
+        <a class="socialite-btn btn-google" href="/login/google">
             <i class="fa fa-google"> <span>Sign in with Google</span></i>
         </a>
     </div>

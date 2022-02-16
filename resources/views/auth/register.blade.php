@@ -67,7 +67,7 @@
         <a class="socialite-btn btn-github" href="{{ url('login/github')}}">
             <i class="fa fa-github"> <span> Sign in with GitHub</span></i>
         </a>
-        <a class="socialite-btn btn-twitter" href="{{ url('login/twitter')}">
+        <a class="socialite-btn btn-twitter" href="">
             <i class="fa fa-twitter"> <span>Sign in with Twitter</span> </i> 
          </a>
         <a class="socialite-btn btn-facebook" href="">
