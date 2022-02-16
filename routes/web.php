@@ -75,3 +75,6 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 
 // Route::get('login/twitter', 'Auth\TwitterController@redirectToProvider');
 // Route::get('login/twitter/callback', 'Auth\TwitterController@handleProviderCallback');
+
+Route::get('login/google', 'Auth\GoogleLoginController@getGoogleAuth');
+Route::get('login/google/callback', 'Auth\GoogleLoginController@authGoogleCallback');

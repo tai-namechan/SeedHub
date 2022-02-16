@@ -63,17 +63,17 @@
         </form>
 
         <p class="socialite-title">SNSアカウントでログイン</p>
-        
-        <a  class="socialite-btn btn-github" href="{{ url('login/github')}}">
+
+        <a class="socialite-btn btn-github" href="{{ url('login/github')}}">
             <i class="fa fa-github"> <span> Sign in with GitHub</span></i>
         </a>
         <a class="socialite-btn btn-twitter" href="{{ url('login/twitter')}">
             <i class="fa fa-twitter"> <span>Sign in with Twitter</span> </i> 
-        </a>
+         </a>
         <a class="socialite-btn btn-facebook" href="">
             <i class="fa fa-facebook"> <span>Sign in with Facebook</span> </i>
         </a>
-        <a class="socialite-btn btn-google" href="">
+        <a class="socialite-btn btn-google" href="/login/google">
             <i class="fa fa-google"> <span>Sign in with Google</span></i>
         </a>
     </div>

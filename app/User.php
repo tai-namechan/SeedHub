@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     // モデルにホワイトリストの設定tokenとavatarの追加
     protected $fillable = [
-        'name', 'email', 'password', 'token', 'avatar',
+        'name', 'email', 'password', 'token', 'avatar', 'google_id',
     ];
 
     /**
