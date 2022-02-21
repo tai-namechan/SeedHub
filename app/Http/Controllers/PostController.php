@@ -31,10 +31,18 @@ class PostController extends Controller
             return redirect('/register');
         }
 
-        $meetings = Meeting::all();
+        // $meetings = Meeting::all();
         // dd($meetings);
         $calendar = new CalendarView(time());
 
+
+        // いいね数をindexに表示する
+        // withCount()は先ほど説明した通りです。これをitemsでビューに返して、ビューは{{$items->likes_count}}で投稿ごとにいいね数を取得、表示することができます
+        // orderBy()は指定した順番でレコードを取得するメソッド。第一パラメータは並べ替えの基準となるフィールドを選択、第二パラメータはソートする方法（昇順asc=小さい順、降順desc=大きい順）を指定します
+        // paginateはレコードが多い場合に、１ページごとの表示数を指定するメソッドです
+        $meetings = Meeting::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        
+        return view('posts.index', ['meetings' => $meetings, "calendar" => $calendar]);
     }
 
     public function create()
