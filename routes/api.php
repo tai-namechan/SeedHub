@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/meetings/{meeting}/like', 'LikeController@like');
+Route::post('/meetings/{meeting}/unlike', 'LikeController@unlike');

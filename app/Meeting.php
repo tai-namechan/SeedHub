@@ -4,8 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Like;
+
 class Meeting extends Model
 {
+    // "fillable"はホワイトリストです。$fillableで指定したカラムは値が代入
+    protected $fillable = [
+        'id', 'user_id'
+    ];
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
+    
     //
     public function Work_times()
     {
@@ -17,12 +28,4 @@ class Meeting extends Model
         'end_time'
     ];
 
-    public function likes()
-    {
-        return $this->hasMany('App\Like');
-    }
-    //後でViewで使う、いいねされているかを判定するメソッド。
-    public function isLikedBy($user): bool {
-        return Like::where('user_id', $user->id)->where('meeting_id', $this->id)->first() !==null;
-    }
 }

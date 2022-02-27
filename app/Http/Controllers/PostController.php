@@ -24,25 +24,48 @@ class PostController extends Controller
         ]);
     }
 
-    function index()
+    function index(Meeting $meeting)
     {
         // ログインしていないユーザーは登録ページに飛ぶ
         if (Auth::id() == null) {
             return redirect('/register');
         }
 
-        // $meetings = Meeting::all();
+        $meetings = Meeting::all();
         // dd($meetings);
         $calendar = new CalendarView(time());
+
+
+                // いいね機能
+        // ユーザーがいいねをしたかの判定
+        $meetings->load('likes');
+        // $meetings = $meetings->toArray();
+        // $sort = [];
+        // foreach ($meetings as $key => $meeting) {
+        //     $sort[$key] = $meeting['likes'];
+        // }
+        // dd($sort[$key]);
+
+        $user = Auth::user();
+
+        $defaultCount = count($meeting->likes);
+        // dd($defaultCount);
+        $defaultLiked = $meeting->likes->where('user_id', $user->id)->first();
+
+        if($defaultLiked == null) {
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
 
 
         // いいね数をindexに表示する
         // withCount()は先ほど説明した通りです。これをitemsでビューに返して、ビューは{{$items->likes_count}}で投稿ごとにいいね数を取得、表示することができます
         // orderBy()は指定した順番でレコードを取得するメソッド。第一パラメータは並べ替えの基準となるフィールドを選択、第二パラメータはソートする方法（昇順asc=小さい順、降順desc=大きい順）を指定します
         // paginateはレコードが多い場合に、１ページごとの表示数を指定するメソッドです
-        $meetings = Meeting::withCount('likes')->orderBy('id', 'desc')->paginate(10);
+        // $meetings = Meeting::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         
-        return view('posts.index', ['meetings' => $meetings, "calendar" => $calendar]);
+        return view('posts.index', ['meetings' => $meetings, "calendar" => $calendar,'meeting' => $meeting, 'userAuth' => $user,'defaultLiked' => $defaultLiked, 'defaultCount' => $defaultCount]);
     }
 
     public function create()
@@ -90,6 +113,8 @@ class PostController extends Controller
         // dd($post);
         // 他のカラムでデータを取るとき
         // $post = Where::等
+
+
         return view('posts.show', ['post' => $post]);
     }
 

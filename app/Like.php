@@ -6,13 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-    public function user()
-    {   //usersテーブルとのリレーションを定義するuserメソッド
-        return $this->belongsTo(User::class);
-    }
 
-    public function meeting()
-    {   //reviewsテーブルとのリレーションを定義するreviewメソッド
-        return $this->belongsTo(Meeting::class);
-    }
+    // "fillable"はホワイトリストです。$fillableで指定したカラムは値が代入
+    protected $fillable = [
+        'id','meeting_id','user_id'
+   ];
+
+
+
+   public function meeting()
+   {
+       return $this->belongsTo(App\Meeting::class, 'meeting_id', 'id');
+   }
+
+   public function user()
+   {
+       return $this->belongsTo(App\User::class, 'user_id', 'id');
+   }
 }

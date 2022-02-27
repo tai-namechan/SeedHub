@@ -79,6 +79,6 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 Route::get('login/google', 'Auth\GoogleLoginController@getGoogleAuth');
 Route::get('login/google/callback', 'Auth\GoogleLoginController@authGoogleCallback');
 
-// ajax いいね機能
-// Ajaxで指定したurlと整合性を取る
-Route::post('/like', 'PostController@like')->name('reviews.like');
+// vue.js いいね機能
+// Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like.firstcheck');
+// Route::get('/posts/{post?}/check', 'LikeController@check')->name('like.check');
