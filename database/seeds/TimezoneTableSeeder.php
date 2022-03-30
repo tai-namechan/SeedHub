@@ -13,7 +13,16 @@ class TimezoneTableSeeder extends Seeder
     {
         DB::table('timezones')->insert([
             [
-                'timezone' => '夜間',
+                'timezone' => '朝',
+                'id' => '1',
+            ],
+            [
+                'timezone' => '昼',
+                'id' => '2',
+            ],
+            [
+                'timezone' => '夜',
+                'id' => '3',
             ],
         ]);
     }
