@@ -61,6 +61,7 @@
         <hr>
 
         <p class="socialite-title">SNSアカウントでログイン</p>
+
         
         <a  class="socialite-btn btn-github" href="{{ url('login/github')}}">
             <i class="fa fa-github"> <span> Sign in with GitHub</span></i>
