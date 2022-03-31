@@ -100,7 +100,7 @@ class PostController extends Controller
         // $meeting_info->timezone_id = 1;
 
         $meeting_info->save();
-
+// dd($meeting_info);
         // リダイレクト処理
         return redirect('/');
     }

@@ -14,10 +14,12 @@ class CategoryTableSeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'name' => 'ワイワイ',
+                'id' => '1',
                 'timezone_id' => '1',
             ],
             [
                 'name' => 'もくもく',
+                'id' => '2',
                 'timezone_id' => '1',
             ],
         ]);
